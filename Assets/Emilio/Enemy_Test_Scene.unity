@@ -666,7 +666,8 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 533434725}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6920127126202774947, guid: aba34d494fbe9b147ac2ad28bf64e438, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

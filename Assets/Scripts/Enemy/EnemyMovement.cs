@@ -1,13 +1,15 @@
+using System.Net;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     [Header("Vars de patrol")]
     public Transform[] waypoints;
     public float patrolSpeed = 3f;
-    public float waypointWaitTime = 1f;
+    public float waypointWaitTime = 5f;
     private int currentWaypointIndex = 0;
+    private bool isWaiting = false;
 
     [Header("Vars de chase")]
     public float followSpeed = 5f;
@@ -21,9 +23,11 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // Configuración inicial
+        agent.autoBraking = true;
+        agent.stoppingDistance = 0.5f;
+
         agent.speed = patrolSpeed;
         MoveToNextWaypoint();
     }
@@ -34,7 +38,6 @@ public class EnemyAI : MonoBehaviour
         {
             agent.SetDestination(player.position);
 
-            // Verificar si el jugador se alejó demasiado
             if (Vector3.Distance(transform.position, player.position) > followRange)
             {
                 StopFollowing();
@@ -42,10 +45,13 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            // Verificar si llegó al waypoint
-            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            if (!isFollowing && !isWaiting)
             {
-                Invoke("MoveToNextWaypoint", waypointWaitTime);
+                if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                {
+                    isWaiting = true;
+                    Invoke("MoveToNextWaypoint", waypointWaitTime);
+                }
             }
         }
     }
@@ -53,7 +59,7 @@ public class EnemyAI : MonoBehaviour
     void MoveToNextWaypoint()
     {
         if (waypoints.Length == 0) return;
-
+        isWaiting = false;
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         agent.SetDestination(waypoints[currentWaypointIndex].position);
     }
@@ -80,7 +86,6 @@ public class EnemyAI : MonoBehaviour
         MoveToNextWaypoint();
     }
 
-    // Visualizar radio de detección en el editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

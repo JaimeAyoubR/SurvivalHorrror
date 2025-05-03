@@ -6,7 +6,10 @@ public class FlashLight : MonoBehaviour
     public GameObject Light;
     public CinemachineVirtualCameraBase camera;
     public Light LightFont;
-    public bool isOn = false;
+    public bool isOn = true;
+
+    public BatteryConsume battery;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,15 +31,21 @@ public class FlashLight : MonoBehaviour
     {
         float X = camera.GetComponent<CinemachinePanTilt>().PanAxis.Value;
         float Y = camera.GetComponent<CinemachinePanTilt>().TiltAxis.Value;
-        
-        Light.transform.rotation = Quaternion.Euler(Y,X,0);
+
+        Light.transform.rotation = Quaternion.Euler(Y, X, 0);
     }
 
     void PowerLight()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && battery.haveBatteries == true)
         {
             isOn = !isOn;
+            LightFont.enabled = isOn;
+        }
+
+        if (battery.haveBatteries == false)
+        {
+            isOn = false;
             LightFont.enabled = isOn;
         }
     }

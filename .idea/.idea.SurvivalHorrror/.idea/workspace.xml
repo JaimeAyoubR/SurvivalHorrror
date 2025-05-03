@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27a4a503-1f27-497d-8068-2dd1124f8d97" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Tinky Winky.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Tinky Winky.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FlashLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FlashLight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
-    </list>
+    <list default="true" id="27a4a503-1f27-497d-8068-2dd1124f8d97" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +119,7 @@
       <updated>1745812559846</updated>
       <workItem from="1745812562630" duration="824000" />
       <workItem from="1746241357480" duration="84000" />
-      <workItem from="1746299765626" duration="6202000" />
+      <workItem from="1746299765626" duration="6933000" />
     </task>
     <servers />
   </component>
@@ -141,25 +135,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/BatteryPickUp.cs</url>
-          <line>42</line>
-          <properties documentPath="C:\Users\jaimi\OneDrive\Escritorio\UnityProjects\SurvivalHorrror\Assets\Scripts\BatteryPickUp.cs" containingFunctionPresentation="Method 'PickUp'">
-            <startOffsets>
-              <option value="799" />
-            </startOffsets>
-            <endOffsets>
-              <option value="822" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Models/Materials/SlendyMat.mat.meta
+guid: 5379fc9450839184188f79f20628f508
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+========
+guid: 8526ed3f0807c0549b38b333694d65a7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 23800000
+>>>>>>>> Alex:Assets/Emilio/Enemy_Test_Scene/NavMesh-Plane.asset.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public Vector3 movement;
     public CinemachineVirtualCameraBase camera;
+    public bool isMoving;
+    public float X;
+    public float Z;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,14 +40,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Move();
         Rotate();
     }
 
     void Move()
-    {
-        float X = Input.GetAxisRaw("Horizontal");
-        float Z = Input.GetAxisRaw("Vertical");
+    { 
+         X = Input.GetAxisRaw("Horizontal");
+         Z = Input.GetAxisRaw("Vertical");
+        if (X == 0 && Z == 0)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
         movement = transform.right * X + transform.forward * Z;
         controller.Move(movement.normalized * (speed * Time.deltaTime));
     }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    private static GameManager instance;
     public AudioManager audioManager;
     public PlayerMovement playerMovement;
 
-    public bool isSound = false;
+    public bool isSound;
 
     void Awake()
     {
@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
+            audioManager.StopSFX(audioManager.PlayerStepsource);
             StopAllCoroutines();
             isSound = false;
         }
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         isSound = true;
         yield return new WaitForSeconds(0.4f);
-        audioManager.PlaySFXRandom(audioManager.footStep, 0.25f, 0.5f);
+        audioManager.PlaySFXRandom(audioManager.PlayerStepsource,audioManager.footStep, 0.40f, 0.55f);
         isSound = false;
     }
 
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         if (audioManager == null)
         {
-            audioManager = FindObjectOfType<AudioManager>();
+            audioManager = FindAnyObjectByType<AudioManager>();
         }
         else
         {
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour
 
         if (playerMovement == null)
         {
-            playerMovement = FindObjectOfType<PlayerMovement>();
+            playerMovement = FindAnyObjectByType<PlayerMovement>();
         }
         else
         {

@@ -3,8 +3,10 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [Header("---------Audio Source----------")]
-    [SerializeField] AudioSource BGMSource;
-    [SerializeField] AudioSource SFXsource;
+    public AudioSource BGMSource;
+    public AudioSource SFXsource;
+    public AudioSource PlayerStepsource;
+    public AudioSource EnemyStepsource;
 
     [Header("---------Audio Clip----------")]
     //Aqui agregamos todos los clips de Audio que queramos
@@ -22,22 +24,27 @@ public class AudioManager : MonoBehaviour
        // BGMSource.clip = BGM; 
         //BGMSource.Play();
     }
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioSource source,AudioClip clip)
     {
-        SFXsource.PlayOneShot(clip);
+        source.PlayOneShot(clip);
     }
 
-    public void PlaySFXRandom(AudioClip clip,float min,float max)
+    public void PlaySFXRandom(AudioSource source,AudioClip clip,float min,float max)
     {
         float random = Random.Range(min,max);
-        SFXsource.pitch = random;
-        SFXsource.PlayOneShot(clip);
-        ResetPitch();
+        source.pitch = random;
+        source.PlayOneShot(clip);
+        //ResetPitch();
     }
 
     private void ResetPitch()
     {
         SFXsource.pitch = 1;
+    }
+
+    public void StopSFX(AudioSource source)
+    {
+        source.Stop();
     }
     
 }

@@ -26,7 +26,7 @@ public class Flas : MonoBehaviour
 
     void ChangeAmplitudeAndGain()
     {
-        if (playerMovement.isMoving == true)
+        if (playerMovement.IsMove())
         {
             camera.GetComponent<CinemachineBasicMultiChannelPerlin>().AmplitudeGain = 2.0f;
             camera.GetComponent<CinemachineBasicMultiChannelPerlin>().FrequencyGain = 1.5f;

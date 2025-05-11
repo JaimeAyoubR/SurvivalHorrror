@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
     
     public AudioClip footStep;
 
-    //public AudioClip enemyFootStep;
+    public AudioClip enemyFootStep;
     
     
 

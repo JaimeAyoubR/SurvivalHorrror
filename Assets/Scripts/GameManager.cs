@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public AudioManager audioManager;
     public PlayerMovement playerMovement;
+    public EnemyMovement enemyMovement;
 
-    public bool isSound;
+    public bool isPlayerSound;
+    public bool isEnemySound;
 
     void Awake()
     {
@@ -28,33 +30,58 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckPLayerMoving();
+        CheckPlayerMoving();
     }
 
 
-    void CheckPLayerMoving()
+    void CheckPlayerMoving()
     {
         if (playerMovement.IsMove())
         {
-            if (isSound == false)
+            if (isPlayerSound == false)
             {
-                StartCoroutine(PlayWalkSound());
+                StartCoroutine(PlayerWalkSound());
             }
         }
         else 
         {
             audioManager.StopSFX(audioManager.PlayerStepsource);
             StopAllCoroutines();
-            isSound = false;
+            isPlayerSound = false;
         }
     }
 
-    IEnumerator PlayWalkSound()
+    void CheckEnemyMove()
     {
-        isSound = true;
+        if (enemyMovement.returnMove())
+        {
+            if (isEnemySound == false)
+            {
+                StartCoroutine(EnemyWalkSound());
+            }
+        }
+        else 
+        {
+            audioManager.StopSFX(audioManager.EnemyStepsource);
+            StopAllCoroutines();
+            isEnemySound = false;
+        }
+    }
+
+    private IEnumerator PlayerWalkSound()
+    {
+        isPlayerSound = true;
         yield return new WaitForSeconds(0.4f);
         audioManager.PlaySFXRandom(audioManager.PlayerStepsource,audioManager.footStep, 0.40f, 0.55f);
-        isSound = false;
+        isPlayerSound = false;
+    }
+
+    IEnumerator EnemyWalkSound()
+    {
+        isEnemySound = true;
+        yield return new WaitForSeconds(0.4f);
+        audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
+        isEnemySound = false;
     }
 
     void CheckComponents()
@@ -75,6 +102,15 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogWarning("No se encontro el PlayerMovement");
+        }
+
+        if (enemyMovement == null)
+        {
+            enemyMovement = FindAnyObjectByType<EnemyMovement>();
+        }
+        else
+        {
+            Debug.LogWarning("No se encontro el EnemyMovement");
         }
     }
 }

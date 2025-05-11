@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 /*
  * Este enemy es un prefab, para que funcione con el nav mesh necesitan agregar un componente llamado NavMeshSurface al
- * terreno del nivel y darle BAKE, el enemy tiene otro componente llamado NavMeshAgent que debería funcionar con eso,
- * si el terreno es muy desigual habrá que modificar los valores en el NavMeshAgent o llendo a Window -> AI -> Navigation
+ * terreno del nivel y darle BAKE, el enemy tiene otro componente llamado NavMeshAgent que deberï¿½a funcionar con eso,
+ * si el terreno es muy desigual habrï¿½ que modificar los valores en el NavMeshAgent o llendo a Window -> AI -> Navigation
  */
 
 public class EnemyMovement : MonoBehaviour
@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
 
     private NavMeshAgent agent;
     private bool isFollowing = false;
+    private bool isMoving = false;
 
     void Start()
     {
@@ -97,5 +98,14 @@ public class EnemyMovement : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
+
+    public bool returnMove()
+    {
+        if(agent.speed != 0)
+            isMoving = true;
+        else
+            isMoving = false;
+        return isMoving;
     }
 }

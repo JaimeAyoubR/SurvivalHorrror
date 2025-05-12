@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     [Header("---------Audio Clip----------")]
     //Aqui agregamos todos los clips de Audio que queramos
 
-    //public AudioClip BGM;
+    public AudioClip BGM;
     
     public AudioClip footStep;
 
@@ -21,8 +21,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-       // BGMSource.clip = BGM; 
-        //BGMSource.Play();
+        BGMSource.clip = BGM; 
+        BGMSource.Play();
     }
     public void PlaySFX(AudioSource source,AudioClip clip)
     {

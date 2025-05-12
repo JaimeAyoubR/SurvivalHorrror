@@ -147,6 +147,55 @@ CapsuleCollider:
   m_Height: 5.1385183
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 2.4820714, z: 0}
+--- !u!1 &27064656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27064658}
+  - component: {fileID: 27064657}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &27064657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27064656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87283f21d7f05d140b3ce806819e50ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 997332530}
+  playerMovement: {fileID: 0}
+  enemyMovement: {fileID: 0}
+  isPlayerSound: 0
+  isEnemySound: 0
+--- !u!4 &27064658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27064656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.522455, y: 1.6469479, z: -4.09865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &209499480
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +1009,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1663089861}
   m_SourcePrefab: {fileID: 100100000, guid: 86a9a9af917e2a34689c0e454635a4a1, type: 3}
+--- !u!114 &997332530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8696994430289490686, guid: b8d4e43174889144e95634d0d66bba16, type: 3}
+  m_PrefabInstance: {fileID: 30534299516451336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57eee4acc58a18c4385386419c8face9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1079621209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,6 +2562,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8696994430289490686, guid: b8d4e43174889144e95634d0d66bba16, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 55173122cc021f64ab0469fab134832a, type: 3}
+    - target: {fileID: 8696994430289490686, guid: b8d4e43174889144e95634d0d66bba16, type: 3}
+      propertyPath: enemyFootStep
+      value: 
+      objectReference: {fileID: 8300000, guid: 29fa806769af05e4fa0083c05c92dfc7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2520,3 +2588,4 @@ SceneRoots:
   - {fileID: 318001076}
   - {fileID: 1276268040}
   - {fileID: 30534299516451336}
+  - {fileID: 27064658}

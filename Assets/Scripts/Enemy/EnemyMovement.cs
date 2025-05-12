@@ -11,21 +11,18 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [Header("Vars de patrol")]
-    public Transform[] waypoints;
+    [Header("Vars de patrol")] public Transform[] waypoints;
     public float patrolSpeed = 3f;
     public float waypointWaitTime = 5f;
     private int currentWaypointIndex = 0;
     private bool isWaiting = false;
 
-    [Header("Vars de chase")]
-    public float followSpeed = 5f;
+    [Header("Vars de chase")] public float followSpeed = 5f;
     public float detectionRadius = 5f;
     public float followRange = 7f;
     private Transform player;
 
-    [Header("Vars de ambush")]
-    public Transform[] ambushPoints;
+    [Header("Vars de ambush")] public Transform[] ambushPoints;
     public float ambushWaitTime = 3f;
     private bool isAmbushing = false;
 
@@ -47,6 +44,15 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        if (isWaiting)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
+
         if (isFollowing)
         {
             agent.SetDestination(player.position);
@@ -68,7 +74,6 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
-
 
 
     void MoveToNextWaypoint()
@@ -126,10 +131,6 @@ public class EnemyMovement : MonoBehaviour
 
     public bool returnMove()
     {
-        if(agent.speed != 0)
-            isMoving = true;
-        else
-            isMoving = false;
         return isMoving;
     }
 }

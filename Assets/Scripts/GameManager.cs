@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         CheckComponents();
-      
     }
 
 
@@ -31,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckPlayerMoving();
+        CheckEnemyMove();
     }
 
 

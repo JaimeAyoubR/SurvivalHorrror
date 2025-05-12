@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        
        // BGMSource.clip = BGM; 
         //BGMSource.Play();
     }

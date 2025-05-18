@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="27a4a503-1f27-497d-8068-2dd1124f8d97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Battery.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Battery.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pila.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pila.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScript.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScript.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScript.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScript.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader/Colectable_Item.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader/Colectable_Item.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "XThreadsFramesViewSplitterKey": "0.6744548",
-    "git-widget-placeholder": "NotMain",
+    "git-widget-placeholder": "Jaime",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,6 +129,7 @@
       <workItem from="1746299765626" duration="6933000" />
       <workItem from="1746932270187" duration="5472000" />
       <workItem from="1747025561553" duration="678000" />
+      <workItem from="1747543704293" duration="1402000" />
     </task>
     <servers />
   </component>

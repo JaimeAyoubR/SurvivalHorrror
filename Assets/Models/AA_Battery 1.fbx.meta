@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 42a5005ef7cebcc408e4e41bfb3ebdfb
+guid: 13299e249d8eb8945a72cf616ad52532
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_AA_Battery
+    second: {fileID: 2100000, guid: f3de3a4b96201874a8fdf33918079ea3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -68,8 +73,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 180
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

@@ -29,9 +29,13 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent agent;
     private bool isFollowing = false;
     private bool isMoving = false;
+    
+    //Variables para el Animator    
+    private Animator animator;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         //player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -43,15 +47,10 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void Update()
+      
     {
-        if (isWaiting)
-        {
-            isMoving = false;
-        }
-        else
-        {
-            isMoving = true;
-        }
+     
+        animator.SetBool("isWaiting", isWaiting);
 
         if (isFollowing)
         {
@@ -74,6 +73,8 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
+    
+    
 
 
     void MoveToNextWaypoint()

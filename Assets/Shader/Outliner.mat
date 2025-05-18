@@ -39,11 +39,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _Fade_Distance: 70
-    - _Outline_Thickness: 0.01
+    - _Outline_Thickness: 0.0065
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Outline_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Outline_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &5276208178632416907

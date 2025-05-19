@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public EnemyMovement enemyMovement;
 
     public bool isPlayerSound;
-    public bool isEnemySound;
+    public bool isEnemySound ;
+    public bool isMoviiiiig;
 
     void Awake()
     {
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         CheckComponents();
-      
     }
 
 
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckPlayerMoving();
+        CheckEnemyMove();
     }
 
 
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
         else 
         {
             audioManager.StopSFX(audioManager.PlayerStepsource);
-            StopAllCoroutines();
+            StopCoroutine(PlayerWalkSound());
             isPlayerSound = false;
         }
     }
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
         else 
         {
             audioManager.StopSFX(audioManager.EnemyStepsource);
-            StopAllCoroutines();
+            StopCoroutine(EnemyWalkSound());
             isEnemySound = false;
         }
     }

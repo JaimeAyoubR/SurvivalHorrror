@@ -676,6 +676,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4490101305571550745}
   - component: {fileID: 1467053025194313765}
+  - component: {fileID: 7347160213593472937}
+  - component: {fileID: 980294112126293616}
   m_Layer: 0
   m_Name: Enemy_Tinky
   m_TagString: Untagged
@@ -691,7 +693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4198572653377532275}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9994578, z: -0, w: -0.032927092}
+  m_LocalRotation: {x: 0, y: 0.9994577, z: -0, w: -0.03292838}
   m_LocalPosition: {x: 0.21187076, y: 2.093991, z: 27.327877}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -722,6 +724,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!195 &7347160213593472937
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198572653377532275}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &980294112126293616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198572653377532275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e05975455219545a9acf269e7d6711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  patrolSpeed: 3
+  waypointWaitTime: 5
+  followSpeed: 5
+  detectionRadius: 5
+  followRange: 7
+  ambushPoints: []
+  ambushWaitTime: 3
 --- !u!1 &4417142098459098623
 GameObject:
   m_ObjectHideFlags: 0

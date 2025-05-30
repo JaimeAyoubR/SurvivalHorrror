@@ -2,6 +2,10 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.AI;
 
+/*
+ * TODO Poner trigger en el enemy
+ */
+
 public class Enemy_Scriptv2 : MonoBehaviour
 {
     [Header("Estados")]
@@ -25,7 +29,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
     public float ambushWaitTime = 3f;
     private bool isAmbushing = false;
 
-    [Header("Vars de ataque (nuevo)")]
+    [Header("Vars de ataque")]
     public float attackRange = 2f;
     public float attackCooldown = 2f;
     private float lastAttackTime;
@@ -331,18 +335,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
 
     void PerformAttack()
     {
-        Debug.Log("¡Enemy ataca al jugador!");
-
-        // Aquí puedes agregar:
-        // - Trigger de animación de ataque
-        // animator.SetTrigger("Attack");
-        // - Daño al jugador
-        // - Efectos de sonido
-        // - Partículas
-
-        // Ejemplo de daño (si tienes un sistema de salud en el jugador)
-        // PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-        // if (playerHealth != null) playerHealth.TakeDamage(10);
+        Debug.Log("Ataque");
     }
 
     #endregion
@@ -362,48 +355,22 @@ public class Enemy_Scriptv2 : MonoBehaviour
 
     #endregion
 
-    #region Legacy Methods (mantenidos por compatibilidad)
-
-    [System.Obsolete("Usa ChangeState(EnemyState.Chase) en su lugar")]
-    void StartFollowing()
-    {
-        ChangeState(EnemyState.Chase);
-    }
-
-    [System.Obsolete("Usa ChangeState(EnemyState.ReturnToPatrol) en su lugar")]
-    void StopFollowing()
-    {
-        ChangeState(EnemyState.ReturnToPatrol);
-    }
-
-    public bool returnMove()
-    {
-        return agent.velocity.magnitude > 0.1f;
-    }
-
-    #endregion
 
     #region Debug
 
     void OnDrawGizmosSelected()
     {
-        // Radio de detección
+        // Radio de detecciOn
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
 
-        // Rango de seguimiento
+        // Rango de chase
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, followRange);
 
         // Rango de ataque
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(transform.position, attackRange);
-
-        // Mostrar estado actual
-        if (Application.isPlaying)
-        {
-            UnityEditor.Handles.Label(transform.position + Vector3.up * 2, currentState.ToString());
-        }
     }
 
     #endregion

@@ -2,13 +2,6 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-/*
- * Este enemy es un prefab, para que funcione con el nav mesh necesitan agregar un componente llamado NavMeshSurface al
- * terreno del nivel y darle BAKE, el enemy tiene otro componente llamado NavMeshAgent que deber�a funcionar con eso,
- * si el terreno es muy desigual habr� que modificar los valores en el NavMeshAgent o llendo a Window -> AI -> Navigation
- */
-
 public class EnemyMovement : MonoBehaviour
 {
     [Header("Vars de patrol")]

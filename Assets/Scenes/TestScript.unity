@@ -32,10 +32,10 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
@@ -924,11 +924,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4724974359139880576, guid: 86a9a9af917e2a34689c0e454635a4a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9
+      value: 61.1
       objectReference: {fileID: 0}
     - target: {fileID: 4724974359139880576, guid: 86a9a9af917e2a34689c0e454635a4a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.1
+      value: 18.1
       objectReference: {fileID: 0}
     - target: {fileID: 4724974359139880576, guid: 86a9a9af917e2a34689c0e454635a4a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -980,7 +980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7791031147089255376, guid: 86a9a9af917e2a34689c0e454635a4a1, type: 3}
       propertyPath: m_Range
-      value: 19.810307
+      value: 33.91838
       objectReference: {fileID: 0}
     - target: {fileID: 7791031147089255376, guid: 86a9a9af917e2a34689c0e454635a4a1, type: 3}
       propertyPath: m_Cookie
@@ -1000,7 +1000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7791031147089255376, guid: 86a9a9af917e2a34689c0e454635a4a1, type: 3}
       propertyPath: m_Shadows.m_NearPlane
-      value: 1.49
+      value: 1.0690017
       objectReference: {fileID: 0}
     - target: {fileID: 7791031147089255376, guid: 86a9a9af917e2a34689c0e454635a4a1, type: 3}
       propertyPath: m_UseColorTemperature
@@ -2940,8 +2940,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f3de3a4b96201874a8fdf33918079ea3, type: 2}
   - {fileID: 2100000, guid: 619c670a96b68644e99ccdc869572f95, type: 2}
+  - {fileID: 2100000, guid: f3de3a4b96201874a8fdf33918079ea3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

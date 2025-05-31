@@ -10,8 +10,10 @@ public class LightFlickering : MonoBehaviour
         // Crear la secuencia solo una vez
         Sequence flickerSequence = DOTween.Sequence();
 
-        flickerSequence.Append(LanternLight.DOIntensity(5.0f, 0.2f))
-            .Append(LanternLight.DOIntensity(0.0f, 0.2f).SetLoops(2, LoopType.Yoyo))
+        flickerSequence.Append(LanternLight.DOIntensity(2.0f, 1.0f))
+            .Append(LanternLight.DOIntensity(0.0f, 0.1f))
+            .Append(LanternLight.DOIntensity(1.0f, 0.5f))
+            .Append(LanternLight.DOIntensity(0.0f, 0.01f).SetLoops(2, LoopType.Yoyo))
             .SetLoops(-1); // Bucle infinito
     }
 

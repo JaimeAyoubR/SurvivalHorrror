@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27a4a503-1f27-497d-8068-2dd1124f8d97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightFlickering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LightFlickering.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "XThreadsFramesViewSplitterKey": "0.6744548",
-    "git-widget-placeholder": "Jaime",
+    "git-widget-placeholder": "NotMain",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

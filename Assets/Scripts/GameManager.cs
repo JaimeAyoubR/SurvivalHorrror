@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-   
+    private static GameManager instance;
+    public AudioManager audioManager;
     public PlayerMovement playerMovement;
     public EnemyMovement enemyMovement;
-    public AudioManager audioManager;
 
     public bool isPlayerSound;
-    public bool isEnemySound ;
+    public bool isEnemySound;
     public bool isMoviiiiig;
-
     public int numbersOfSuns;
+
+
+
 
     void Awake()
     {
@@ -33,8 +34,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // CheckPlayerMoving();
-       // CheckEnemyMove();
+        CheckPlayerMoving();
+        CheckEnemyMove();
+
     }
 
 
@@ -49,8 +51,8 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-         //   audioManager.StopSFX(audioManager.PlayerStepsource);
-            StopCoroutine(PlayerWalkSound());
+            //audioManager.StopSFX(audioManager.PlayerStepsource);
+            StopAllCoroutines();
             isPlayerSound = false;
         }
     }
@@ -67,7 +69,7 @@ public class GameManager : MonoBehaviour
         else 
         {
             //audioManager.StopSFX(audioManager.EnemyStepsource);
-            StopCoroutine(EnemyWalkSound());
+            StopAllCoroutines();
             isEnemySound = false;
         }
     }
@@ -76,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         isPlayerSound = true;
         yield return new WaitForSeconds(0.4f);
-        AudioManager.instance.PlaySFXRandom(SoundType.PASOS, 0.40f, 0.55f);
+        //audioManager.PlaySFXRandom(audioManager.PlayerStepsource, 0.40f, 0.55f);
         isPlayerSound = false;
     }
 
@@ -84,7 +86,8 @@ public class GameManager : MonoBehaviour
     {
         isEnemySound = true;
         yield return new WaitForSeconds(0.4f);
-        AudioManager.instance.PlaySFXRandom(SoundType.PASOSENEMY, 0.40f, 0.55f);
+        //audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
+
         isEnemySound = false;
     }
 
@@ -116,14 +119,5 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("No se encontro el EnemyMovement");
         }
-    }
-
-    public void addSun()
-    {
-        if(numbersOfSuns < 3)
-            numbersOfSuns += 1;
-        else
-            Debug.Log("Victoria");
-        Debug.Log(numbersOfSuns);
     }
 }

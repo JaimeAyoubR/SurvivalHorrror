@@ -4,9 +4,15 @@ using UnityEngine;
 public enum SoundType
 {
     PASOS,
-    PASOSENEMY,
+<<<<<<< Updated upstream
+=======
+    PASOS_ENEMY,
+>>>>>>> Stashed changes
     PUERTA,
     ENEMY,
+    LINTERNA, 
+    AMBIENTE,
+    RECOLECTAR_ITEM
     //AUDIO CLIPS QUE QUIERAS
 }
 
@@ -19,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
     public AudioSource audioSource;
-
+    public AudioSource soundSourcePoint;
 
     private void Awake()
     {
@@ -42,15 +48,25 @@ public class AudioManager : MonoBehaviour
         PlaySFX(clip, volume);
         ResetPitch();
     }
+    
+    public void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume = 1f)
+    {
+        AudioSource audioSource = Instantiate(soundSourcePoint, position, Quaternion.identity);
+        audioSource.clip = clip;
+        audioSource.volume = volume;
+        audioSource.Play();
+        float clipLength = audioSource.clip.length;
+        //DESTROY
+    }
 
     private void ResetPitch()
     {
         audioSource.pitch = 1;
     }
 
-    public static void StopSFX()
+    public void StopSFX(AudioSource source)
     {
-        instance.audioSource.Stop();
+        source.Stop();
     }
     
 }

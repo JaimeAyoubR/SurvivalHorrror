@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
 
     public bool isPlayerSound;
     public bool isEnemySound;
+<<<<<<< Updated upstream
+=======
+    public bool isMoviiiiig;
+
+    public int numbersOfSuns;
+>>>>>>> Stashed changes
 
     void Awake()
     {
@@ -29,8 +35,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         CheckPlayerMoving();
         CheckEnemyMove();
+=======
+       CheckPlayerMoving();
+       CheckEnemyMove();
+>>>>>>> Stashed changes
     }
 
 
@@ -80,7 +91,11 @@ public class GameManager : MonoBehaviour
     {
         isEnemySound = true;
         yield return new WaitForSeconds(0.4f);
+<<<<<<< Updated upstream
         audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
+=======
+        AudioManager.instance.PlaySFXRandom(SoundType.PASOS_ENEMY, 0.40f, 0.55f);
+>>>>>>> Stashed changes
         isEnemySound = false;
     }
 

@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Emilio/GrayBoxing.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 29d220f6a95dabd42beeedb5afd1b825
+  - enabled: 1
+    path: Assets/Scenes/TestScript.unity
+    guid: 4b09eef46e6515a4b98cd05a3af3e46c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

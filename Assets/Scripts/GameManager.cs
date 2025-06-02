@@ -120,4 +120,12 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("No se encontro el EnemyMovement");
         }
     }
+
+    public void addSun()
+    {
+        if(numbersOfSuns < 3)
+            numbersOfSuns += 1;
+        else 
+            Debug.Log("Victoria");
+    }
 }

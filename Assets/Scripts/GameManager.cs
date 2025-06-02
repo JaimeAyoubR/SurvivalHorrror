@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            audioManager.StopSFX(audioManager.PlayerStepsource);
+            //audioManager.StopSFX(audioManager.PlayerStepsource);
             StopAllCoroutines();
             isPlayerSound = false;
         }
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            audioManager.StopSFX(audioManager.EnemyStepsource);
+            //audioManager.StopSFX(audioManager.EnemyStepsource);
             StopAllCoroutines();
             isEnemySound = false;
         }
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         isPlayerSound = true;
         yield return new WaitForSeconds(0.4f);
-        audioManager.PlaySFXRandom(audioManager.PlayerStepsource,audioManager.footStep, 0.40f, 0.55f);
+        //audioManager.PlaySFXRandom(audioManager.PlayerStepsource, 0.40f, 0.55f);
         isPlayerSound = false;
     }
 
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
     {
         isEnemySound = true;
         yield return new WaitForSeconds(0.4f);
-        audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
+        //audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
 
         isEnemySound = false;
     }

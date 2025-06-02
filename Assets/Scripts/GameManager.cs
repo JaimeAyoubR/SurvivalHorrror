@@ -5,9 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
-    public AudioManager audioManager;
+   
     public PlayerMovement playerMovement;
     public EnemyMovement enemyMovement;
+    public AudioManager audioManager;
 
     public bool isPlayerSound;
     public bool isEnemySound ;
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            audioManager.StopSFX(audioManager.PlayerStepsource);
+         //   audioManager.StopSFX(audioManager.PlayerStepsource);
             StopCoroutine(PlayerWalkSound());
             isPlayerSound = false;
         }
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            audioManager.StopSFX(audioManager.EnemyStepsource);
+            //audioManager.StopSFX(audioManager.EnemyStepsource);
             StopCoroutine(EnemyWalkSound());
             isEnemySound = false;
         }
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         isPlayerSound = true;
         yield return new WaitForSeconds(0.4f);
-        audioManager.PlaySFXRandom(audioManager.PlayerStepsource,audioManager.footStep, 0.40f, 0.55f);
+        AudioManager.instance.PlaySFXRandom(SoundType.PASOS, 0.40f, 0.55f);
         isPlayerSound = false;
     }
 
@@ -81,7 +82,7 @@ public class GameManager : MonoBehaviour
     {
         isEnemySound = true;
         yield return new WaitForSeconds(0.4f);
-        audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
+        AudioManager.instance.PlaySFXRandom(SoundType.PASOSENEMY, 0.40f, 0.55f);
         isEnemySound = false;
     }
 

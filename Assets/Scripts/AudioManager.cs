@@ -4,6 +4,7 @@ using UnityEngine;
 public enum SoundType
 {
     PASOS,
+    PASOSENEMY,
     PUERTA,
     ENEMY,
     //AUDIO CLIPS QUE QUIERAS
@@ -47,9 +48,9 @@ public class AudioManager : MonoBehaviour
         audioSource.pitch = 1;
     }
 
-    public void StopSFX(AudioSource source)
+    public static void StopSFX()
     {
-        source.Stop();
+        instance.audioSource.Stop();
     }
     
 }

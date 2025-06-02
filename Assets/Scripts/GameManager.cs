@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     public bool isPlayerSound;
     public bool isEnemySound;
 
+    public bool isMoviiiiig;
+
+    public int numbersOfSuns;
+
+
     void Awake()
     {
         if (instance == null)
@@ -31,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         CheckPlayerMoving();
         CheckEnemyMove();
+
     }
 
 
@@ -81,6 +87,7 @@ public class GameManager : MonoBehaviour
         isEnemySound = true;
         yield return new WaitForSeconds(0.4f);
         audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
+
         isEnemySound = false;
     }
 

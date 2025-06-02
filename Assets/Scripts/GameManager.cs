@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
 
     public bool isPlayerSound;
     public bool isEnemySound;
-
     public bool isMoviiiiig;
-
     public int numbersOfSuns;
+
+
 
 
     void Awake()

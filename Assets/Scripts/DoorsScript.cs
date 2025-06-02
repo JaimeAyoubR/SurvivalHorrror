@@ -9,9 +9,13 @@ public class DoorsScript : MonoBehaviour
     public bool isOpen;
     public GameObject Pivot;
     public TextMeshProUGUI OpenText;
-    public bool canOpen = true;
+    public bool canOpen = false;
 
 
+    void Start()
+    {
+        canOpen = false;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && canOpen)
@@ -36,10 +40,12 @@ public class DoorsScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.tag == "Player")
         {
             OpenText.enabled = true;
-           canOpen = true;
+            canOpen = true;
+            OpenText.text = isOpen ? "Close door: E" : "Open door: E";
         }
     }
 
@@ -48,5 +54,4 @@ public class DoorsScript : MonoBehaviour
         canOpen = false;
         OpenText.enabled = false;
     }
- 
 }

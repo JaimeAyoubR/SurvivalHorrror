@@ -31,8 +31,7 @@ public class PlayerRayCast : MonoBehaviour
         // Lanzar el raycast
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance) && hit.collider.tag == "TP")
         {
-            
-            seeEvent?.Invoke(); 
+            seeEvent?.Invoke();
         }
     }
 

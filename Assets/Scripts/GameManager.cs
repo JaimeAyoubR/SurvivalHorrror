@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    public static GameManager instance;
    
     public PlayerMovement playerMovement;
     public EnemyMovement enemyMovement;
@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckPlayerMoving();
-        CheckEnemyMove();
+       // CheckPlayerMoving();
+       // CheckEnemyMove();
     }
 
 
@@ -118,11 +118,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void addSun()
+    public void addSun()
     {
         if(numbersOfSuns < 3)
             numbersOfSuns += 1;
         else
             Debug.Log("Victoria");
+        Debug.Log(numbersOfSuns);
     }
 }

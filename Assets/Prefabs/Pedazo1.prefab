@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8213779467154233997}
+  - component: {fileID: 1146963357310046021}
+  - component: {fileID: 2895306752463138253}
   m_Layer: 0
   m_Name: Pedazo1
   m_TagString: Untagged
@@ -26,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.99735564, z: -0, w: -0.07267608}
   m_LocalPosition: {x: -3.4537416, y: 0, z: 0.27713883}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1048354758270846519}
   - {fileID: 4014047613401130710}
@@ -36,6 +38,43 @@ Transform:
   - {fileID: 6100081295667459319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 188.335, z: 0}
+--- !u!136 &1146963357310046021
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178330678033510843}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: -1.77, y: 4.64, z: 3.08}
+--- !u!114 &2895306752463138253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178330678033510843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b3030431c91d40b88fa933c707744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  canPickUp: 0
 --- !u!1 &3106637493658038693
 GameObject:
   m_ObjectHideFlags: 0

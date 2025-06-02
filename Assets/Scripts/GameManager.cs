@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public bool isEnemySound ;
     public bool isMoviiiiig;
 
+    public int numbersOfSuns;
+
     void Awake()
     {
         if (instance == null)
@@ -114,5 +116,13 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("No se encontro el EnemyMovement");
         }
+    }
+
+    void addSun()
+    {
+        if(numbersOfSuns < 3)
+            numbersOfSuns += 1;
+        else
+            Debug.Log("Victoria");
     }
 }

@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27a4a503-1f27-497d-8068-2dd1124f8d97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +137,7 @@
       <workItem from="1747543704293" duration="1402000" />
       <workItem from="1747590136603" duration="654000" />
       <workItem from="1748632313040" duration="8489000" />
+      <workItem from="1748827679573" duration="1625000" />
     </task>
     <servers />
   </component>

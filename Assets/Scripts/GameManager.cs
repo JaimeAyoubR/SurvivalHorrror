@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
-    public AudioManager audioManager;
+    public static GameManager instance;
+   
     public PlayerMovement playerMovement;
     public EnemyMovement enemyMovement;
+    public AudioManager audioManager;
 
     public bool isPlayerSound;
-    public bool isEnemySound;
-<<<<<<< Updated upstream
-=======
+    public bool isEnemySound ;
     public bool isMoviiiiig;
 
     public int numbersOfSuns;
->>>>>>> Stashed changes
 
     void Awake()
     {
@@ -35,13 +33,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-        CheckPlayerMoving();
-        CheckEnemyMove();
-=======
-       CheckPlayerMoving();
-       CheckEnemyMove();
->>>>>>> Stashed changes
+       // CheckPlayerMoving();
+       // CheckEnemyMove();
     }
 
 
@@ -56,8 +49,8 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            audioManager.StopSFX(audioManager.PlayerStepsource);
-            StopAllCoroutines();
+         //   audioManager.StopSFX(audioManager.PlayerStepsource);
+            StopCoroutine(PlayerWalkSound());
             isPlayerSound = false;
         }
     }
@@ -73,8 +66,8 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            audioManager.StopSFX(audioManager.EnemyStepsource);
-            StopAllCoroutines();
+            //audioManager.StopSFX(audioManager.EnemyStepsource);
+            StopCoroutine(EnemyWalkSound());
             isEnemySound = false;
         }
     }
@@ -83,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         isPlayerSound = true;
         yield return new WaitForSeconds(0.4f);
-        audioManager.PlaySFXRandom(audioManager.PlayerStepsource,audioManager.footStep, 0.40f, 0.55f);
+        AudioManager.instance.PlaySFXRandom(SoundType.PASOS, 0.40f, 0.55f);
         isPlayerSound = false;
     }
 
@@ -91,11 +84,7 @@ public class GameManager : MonoBehaviour
     {
         isEnemySound = true;
         yield return new WaitForSeconds(0.4f);
-<<<<<<< Updated upstream
-        audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
-=======
-        AudioManager.instance.PlaySFXRandom(SoundType.PASOS_ENEMY, 0.40f, 0.55f);
->>>>>>> Stashed changes
+        AudioManager.instance.PlaySFXRandom(SoundType.PASOSENEMY, 0.40f, 0.55f);
         isEnemySound = false;
     }
 
@@ -127,5 +116,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("No se encontro el EnemyMovement");
         }
+    }
+
+    public void addSun()
+    {
+        if(numbersOfSuns < 3)
+            numbersOfSuns += 1;
+        else
+            Debug.Log("Victoria");
+        Debug.Log(numbersOfSuns);
     }
 }

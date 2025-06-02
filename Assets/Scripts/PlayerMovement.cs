@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Playables;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public CinemachineVirtualCameraBase camera;
     private bool isMoving;
 
+        public PlayableDirector  director;
 
     private float X;
     private float Z;
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+       
     }
 
     void Start()

@@ -47,7 +47,6 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void Update()
-      
     {
      
         animator.SetBool("isWaiting", isWaiting);

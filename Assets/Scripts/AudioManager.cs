@@ -1,45 +1,50 @@
 using UnityEngine;
 
+
+public enum SoundType
+{
+    PASOS,
+    PUERTA,
+    ENEMY,
+    //AUDIO CLIPS QUE QUIERAS
+}
+
+
+[RequireComponent (typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
-    [Header("---------Audio Source----------")]
-    public AudioSource BGMSource;
-    public AudioSource SFXsource;
-    public AudioSource PlayerStepsource;
-    public AudioSource EnemyStepsource;
+    [Tooltip("Esta lista tiene que ser llenada en orden de acuerdo con el enum de arriba en la clase AudioManager")]
+    [SerializeField] private AudioClip[] soundList;
 
-    [Header("---------Audio Clip----------")]
-    //Aqui agregamos todos los clips de Audio que queramos
+    public static AudioManager instance;
+    public AudioSource audioSource;
 
-    public AudioClip BGM;
-    
-    public AudioClip footStep;
 
-    public AudioClip enemyFootStep;
-    
-    
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
-        BGMSource.clip = BGM; 
-        BGMSource.Play();
+        audioSource = GetComponent<AudioSource>();
     }
-    public void PlaySFX(AudioSource source,AudioClip clip)
-    {
-        source.PlayOneShot(clip);
+    public static void PlaySFX(SoundType clip, float volume = 1f)
+    {   
+        instance.audioSource.PlayOneShot(instance.soundList[(int)clip], volume);
     }
 
-    public void PlaySFXRandom(AudioSource source,AudioClip clip,float min,float max)
+    public void PlaySFXRandom(SoundType clip, float minValue, float maxValue, float volume = 1f)
     {
-        float random = Random.Range(min,max);
-        source.pitch = random;
-        source.PlayOneShot(clip);
-        //ResetPitch();
+        float random = Random.Range(minValue,maxValue);
+        audioSource.pitch = random;
+        PlaySFX(clip, volume);
+        ResetPitch();
     }
 
     private void ResetPitch()
     {
-        SFXsource.pitch = 1;
+        audioSource.pitch = 1;
     }
 
     public void StopSFX(AudioSource source)

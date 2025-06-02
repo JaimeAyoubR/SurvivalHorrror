@@ -14,9 +14,6 @@ public class GameManager : MonoBehaviour
     public bool isMoviiiiig;
     public int numbersOfSuns;
 
-
-
-
     void Awake()
     {
         if (instance == null)

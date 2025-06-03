@@ -69,7 +69,7 @@ public class DoorsScript : MonoBehaviour
             return;
         }
 
-        //AudioManager.PlaySFX(SoundType.PUERTA);
+        AudioManager.PlaySFX(SoundType.PUERTA);
         AnimateDoor();
         UpdateUIText();
     }

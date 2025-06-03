@@ -6,6 +6,13 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseUI;
     public bool isPaused = false;
 
+    private void OnEnable()
+    {
+        GameManager.winGame += WinGame;
+        Enemy_Scriptv2.attackEvent += LooseGame;
+    }
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -15,6 +22,16 @@ public class PauseMenu : MonoBehaviour
             else
                 Pause();
         }
+    }
+
+    public void LooseGame(Transform aaaa)
+    {
+        //LOOSE
+    }
+
+    public void WinGame()
+    {
+        //WIN
     }
 
     public void Resume()

@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        speed = 10f;
+        speed = 5f;
         if (controller == null)
         {
             controller = GetComponent<CharacterController>();

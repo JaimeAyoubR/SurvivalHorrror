@@ -1274,7 +1274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029068588916170803, guid: c03f24ba659962b4eb4201f25f514c28, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 62.724
+      value: -3.3899994
       objectReference: {fileID: 0}
     - target: {fileID: 7029068588916170803, guid: c03f24ba659962b4eb4201f25f514c28, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1282,7 +1282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029068588916170803, guid: c03f24ba659962b4eb4201f25f514c28, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 93.36429
+      value: 47.186
       objectReference: {fileID: 0}
     - target: {fileID: 7029068588916170803, guid: c03f24ba659962b4eb4201f25f514c28, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2041,6 +2041,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 798095729816665211, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 798095729816665211, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 561750364}
@@ -2050,7 +2054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2679521973899896841, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.724
+      value: -8.39
       objectReference: {fileID: 0}
     - target: {fileID: 2679521973899896841, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2058,7 +2062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2679521973899896841, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 92.99829
+      value: 46.82
       objectReference: {fileID: 0}
     - target: {fileID: 2679521973899896841, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5520,11 +5524,11 @@ MonoBehaviour:
   patrolSpeed: 3
   waypointWaitTime: 5
   followSpeed: 5
-  detectionRadius: 5
-  followRange: 7
+  detectionRadius: 8.14
+  followRange: 6.94
   ambushPoints: []
   ambushWaitTime: 3
-  attackRange: 2
+  attackRange: 3.37
   attackCooldown: 2
 --- !u!4 &1111975904 stripped
 Transform:
@@ -5990,11 +5994,11 @@ MonoBehaviour:
   patrolSpeed: 3
   waypointWaitTime: 5
   followSpeed: 5
-  detectionRadius: 5
+  detectionRadius: 9.02
   followRange: 7
   ambushPoints: []
   ambushWaitTime: 3
-  attackRange: 2
+  attackRange: 2.44
   attackCooldown: 2
 --- !u!114 &1218662320
 MonoBehaviour:
@@ -6974,12 +6978,12 @@ MonoBehaviour:
   - {fileID: 947150842}
   patrolSpeed: 3
   waypointWaitTime: 5
-  followSpeed: 5
-  detectionRadius: 5
-  followRange: 7
+  followSpeed: 4
+  detectionRadius: 10.8
+  followRange: 8.47
   ambushPoints: []
   ambushWaitTime: 3
-  attackRange: 2.31
+  attackRange: 3.47
   attackCooldown: 2
 --- !u!114 &1510744076
 MonoBehaviour:
@@ -8057,7 +8061,7 @@ Transform:
   m_GameObject: {fileID: 1732420811}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.724, y: -9.771999, z: 93.36429}
+  m_LocalPosition: {x: -3.3900003, y: -9.771999, z: 47.186}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9601,6 +9605,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8902987723466437215, guid: d2f82001fa6cb504db940edb3acf9858, type: 3}
+      propertyPath: followRange
+      value: 7.88
+      objectReference: {fileID: 0}
+    - target: {fileID: -8902987723466437215, guid: d2f82001fa6cb504db940edb3acf9858, type: 3}
+      propertyPath: followSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8902987723466437215, guid: d2f82001fa6cb504db940edb3acf9858, type: 3}
+      propertyPath: detectionRadius
+      value: 7.97
+      objectReference: {fileID: 0}
     - target: {fileID: -8902987723466437215, guid: d2f82001fa6cb504db940edb3acf9858, type: 3}
       propertyPath: waypoints.Array.size
       value: 8

@@ -46,12 +46,14 @@ public class PauseMenu : MonoBehaviour
         if (DeathUI == null)
             DeathUI = GameObject.FindGameObjectWithTag("DeathMenu");
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         DeathUI.GetComponent<Canvas>().enabled = true;
     }
 
     public void WinGame()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         if (WinUI == null)
             WinUI = GameObject.FindGameObjectWithTag("VictoryMenu");
         WinUI.GetComponent<Canvas>().enabled = true;

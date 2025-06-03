@@ -12,7 +12,6 @@ public class UI_Manager1 : MonoBehaviour
     public int numOfSunes;
 
     
-
     private void OnEnable()
     {
         GameManager.updateUI += CheckWin;

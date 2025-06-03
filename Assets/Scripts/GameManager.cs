@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         PickUpSun.sunUIEvent -= AddSun;
         BatteryPickUp.batteryUIEvent -= AddBattery;
     }
+
     void Awake()
     {
         if (instance == null)

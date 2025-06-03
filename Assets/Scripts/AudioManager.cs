@@ -4,9 +4,12 @@ using UnityEngine;
 public enum SoundType
 {
     PASOS,
-    PASOSENEMY,
+    PASOS_ENEMY,
     PUERTA,
     ENEMY,
+    LINTERNA, 
+    AMBIENTE,
+    RECOLECTAR_ITEM
     //AUDIO CLIPS QUE QUIERAS
 }
 
@@ -19,7 +22,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
     public AudioSource audioSource;
-
+    public AudioSource soundSourcePoint;
 
     private void Awake()
     {
@@ -35,17 +38,27 @@ public class AudioManager : MonoBehaviour
         instance.audioSource.PlayOneShot(instance.soundList[(int)clip], volume);
     }
 
-    public void PlaySFXRandom(SoundType clip, float minValue, float maxValue, float volume = 1f)
+    public static void PlaySFXRandom(SoundType clip, float minValue, float maxValue, float volume = 1f)
     {
         float random = Random.Range(minValue,maxValue);
-        audioSource.pitch = random;
+        instance.audioSource.pitch = random;
         PlaySFX(clip, volume);
         ResetPitch();
     }
-
-    private void ResetPitch()
+    
+    public void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume = 1f)
     {
-        audioSource.pitch = 1;
+        AudioSource audioSource = Instantiate(soundSourcePoint, position, Quaternion.identity);
+        audioSource.clip = clip;
+        audioSource.volume = volume;
+        audioSource.Play();
+        float clipLength = audioSource.clip.length;
+        //DESTROY
+    }
+
+    private static void ResetPitch()
+    {
+        instance.audioSource.pitch = 1;
     }
 
     public static void StopSFX()

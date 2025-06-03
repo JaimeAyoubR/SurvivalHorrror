@@ -9,11 +9,10 @@ public class PickUpSun : MonoBehaviour
     {
         if (gameManager == null)
         {
-            gameManager = GameObject.FindAnyObjectByType<GameManager>();
+            gameManager = FindAnyObjectByType<GameManager>();
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (canPickUp)

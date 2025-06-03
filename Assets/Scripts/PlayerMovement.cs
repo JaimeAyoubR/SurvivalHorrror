@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (audioManager == null)
         {
-            audioManager = FindObjectOfType<AudioManager>();
+            audioManager = FindFirstObjectByType<AudioManager>();
         }
         else
         {

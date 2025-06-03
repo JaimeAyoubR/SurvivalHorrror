@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
-using Unity.VisualScripting;
 
 public class DoorsScript : MonoBehaviour
 {
@@ -11,12 +10,20 @@ public class DoorsScript : MonoBehaviour
     {
         Normal_Door,
         Sun_Door
-    }public DoorType type;
+    }
 
-    public bool isOpen;
+    [Header("Door Configuration")]
+    public DoorType type;
     public GameObject Pivot;
     public TextMeshProUGUI OpenText;
+
+    [Header("Sun Door Settings")]
+    public int requiredSuns = 2;
+
+    [Header("Door Status")]
+    public bool isOpen = true;
     public bool canOpen = false;
+
     private float targetRotationY;
     private int sunNums = 0;
 
@@ -25,11 +32,17 @@ public class DoorsScript : MonoBehaviour
         PickUpSun.sunUIEvent += AddSuns;
     }
 
+    private void OnDisable()
+    {
+        PickUpSun.sunUIEvent -= AddSuns;
+    }
+
     void Start()
     {
-        canOpen = false;
-       // type = DoorType.Normal_Door;
+        canOpen = true;
+        UpdateUIText();
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && canOpen)
@@ -41,68 +54,126 @@ public class DoorsScript : MonoBehaviour
     void AddSuns()
     {
         sunNums++;
+
+        if (canOpen)
+        {
+            UpdateUIText();
+        }
     }
 
     public void OpenDoor()
     {
-        if(type == DoorType.Sun_Door && sunNums == 2)
+        if (!CanOpenDoor())
         {
-            AudioManager.PlaySFX(SoundType.PUERTA);
-            if (!isOpen)
-            {
-                DOTween.KillAll();
-                targetRotationY = Pivot.transform.rotation.y - 90f;
-                Pivot.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast);
-                isOpen = true;
-            }
-            else
-            {
-                DOTween.KillAll();
-                targetRotationY = Pivot.transform.rotation.y + 90f;
-                Pivot.transform.DORotate(new Vector3(0, 90, 0), 0.2f, RotateMode.Fast);
-                isOpen = false;
-            }
-
+            ShowCannotOpenMessage();
+            return;
         }
-        else if(type == DoorType.Normal_Door)
-        {
-            AudioManager.PlaySFX(SoundType.PUERTA);
 
-            if (!isOpen)
-            {
-                DOTween.KillAll();
-                targetRotationY = Pivot.transform.rotation.y - 90f;
-                Pivot.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast);
-                isOpen = true;
-            }
-            else
-            {
-                DOTween.KillAll();
-                targetRotationY = Pivot.transform.rotation.y + 90f;
-                Pivot.transform.DORotate(new Vector3(0, 90, 0), 0.2f, RotateMode.Fast);
-                isOpen = false;
-            }
+        //AudioManager.PlaySFX(SoundType.PUERTA);
+        AnimateDoor();
+        UpdateUIText();
+    }
+
+    private bool CanOpenDoor()
+    {
+        switch (type)
+        {
+            case DoorType.Normal_Door:
+                //isOpen = true;
+                return true;
+
+            case DoorType.Sun_Door:
+                return sunNums >= requiredSuns;
+
+            default:
+                Debug.LogError($"Unknown door type: {type}");
+                return false;
+        }
+    }
+
+    private void AnimateDoor()
+    {
+        DOTween.Kill(Pivot.transform);
+
+        if (!isOpen)
+        {
+            targetRotationY = Pivot.transform.rotation.y - 90f;
+            Pivot.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast)
+                .OnComplete(() => Debug.Log($"{type} opened"));
+            isOpen = true;
         }
         else
         {
-            return;
+            targetRotationY = Pivot.transform.rotation.y + 90f;
+            Pivot.transform.DORotate(new Vector3(0, 90, 0), 0.2f, RotateMode.Fast)
+                .OnComplete(() => Debug.Log($"{type} closed"));
+            isOpen = false;
+        }
+    }
+
+    private void UpdateUIText()
+    {
+        if (!canOpen || OpenText == null) return;
+
+        switch (type)
+        {
+            case DoorType.Normal_Door:
+                OpenText.text = isOpen ? "Close door: E" : "Open door: E";
+                break;
+
+            case DoorType.Sun_Door:
+                if (sunNums >= requiredSuns)
+                {
+                    OpenText.text = isOpen ? "Close door: E" : "Open door: E";
+                }
+                else
+                {
+                    OpenText.text = $"Need {requiredSuns - sunNums} more suns";
+                }
+                break;
+        }
+    }
+
+    private void ShowCannotOpenMessage()
+    {
+        switch (type)
+        {
+            case DoorType.Sun_Door:
+                Debug.Log($"Cannot open Sun Door. Need {requiredSuns - sunNums} more suns.");
+                break;
+
+            default:
+                Debug.Log("Cannot open door: Unknown condition.");
+                break;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.gameObject.name);
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            OpenText.enabled = true;
-            canOpen = true;
-            OpenText.text = isOpen ? "Close door: E" : "Open door: E";
+            if (!canOpen)
+            {
+                canOpen = true;
+                OpenText.enabled = true;
+                UpdateUIText();
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        canOpen = false;
-        OpenText.enabled = false;
+        if (other.CompareTag("Player"))
+        {
+            canOpen = false;
+            if (OpenText != null)
+            {
+                OpenText.enabled = false;
+            }
+        }
+    }
+    public string GetDoorStatus()
+    {
+        return $"Type: {type}, Open: {isOpen}, Suns: {sunNums}/{requiredSuns}, Can Open: {CanOpenDoor()}";
     }
 }

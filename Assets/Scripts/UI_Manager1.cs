@@ -35,9 +35,4 @@ public class UI_Manager1 : MonoBehaviour
         batteryText.text = "X" + " " + battery.ToString();
     }
 
-    public void WinGame()
-    {
-       //WIN WIN 
-    }
-
 }

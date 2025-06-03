@@ -27,6 +27,8 @@ public class UI_Manager1 : MonoBehaviour
 
     void UpdateSuns(int suns)
     {
+        numOfSunes += suns;
+        Debug.Log("ADD SUN UI" + numOfSunes);
         sunText.text = "X" + " " + suns.ToString();
     }
 

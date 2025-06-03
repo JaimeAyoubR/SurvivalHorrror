@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour
     void AddSun()
     {
         numOfSunes++;
+        Debug.Log("ADD SUN GM" + numOfSunes);
         updateSunsUI?.Invoke(numOfSunes);
     }
 }

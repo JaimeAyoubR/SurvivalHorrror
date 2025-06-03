@@ -25,7 +25,7 @@ public class PickUpSun : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 PickText.enabled = false;
-                AudioManager.PlaySFX(SoundType.RECOLECTAR_ITEM);
+                //AudioManager.PlaySFX(SoundType.RECOLECTAR_ITEM);
                 sunUIEvent?.Invoke();
                 Destroy(this.gameObject);
             }

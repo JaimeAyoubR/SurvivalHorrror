@@ -1,6 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
-
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,11 +10,28 @@ public class GameManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public EnemyMovement enemyMovement;
 
+
+    public static Action<int, int> updateUI;
+    public static Action winGame;
+
+    private int numOfSunes;
+    private int numOfBatterys;
+
     public bool isPlayerSound;
     public bool isEnemySound;
     public bool isMoviiiiig;
-    public int numbersOfSuns;
 
+    private void OnEnable()
+    {
+        PickUpSun.sunUIEvent += AddSun;
+        BatteryPickUp.batteryUIEvent += AddBattery;
+    }
+
+    private void OnDisable()
+    {
+        PickUpSun.sunUIEvent -= AddSun;
+        BatteryPickUp.batteryUIEvent -= AddBattery;
+    }
     void Awake()
     {
         if (instance == null)
@@ -27,15 +45,15 @@ public class GameManager : MonoBehaviour
         CheckComponents();
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         CheckPlayerMoving();
         CheckEnemyMove();
-
+        if (numOfSunes >= 3)
+        {
+            winGame?.Invoke();
+        }
     }
-
 
     void CheckPlayerMoving()
     {
@@ -122,11 +140,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void addSun()
+    void AddSun()
     {
-        if(numbersOfSuns < 3)
-            numbersOfSuns += 1;
-        else 
-            Debug.Log("Victoria");
+        numOfSunes++;
+        UpdateUI();
+    }
+
+    void AddBattery()
+    {
+        numOfBatterys++;
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        updateUI?.Invoke(numOfBatterys, numOfSunes);
     }
 }

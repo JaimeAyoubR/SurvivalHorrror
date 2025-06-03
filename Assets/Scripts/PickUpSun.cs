@@ -4,23 +4,24 @@ using UnityEngine;
 public class PickUpSun : MonoBehaviour
 {
    public GameManager  gameManager;
+    public static Action sunUIEvent;
+
     public bool canPickUp = false;
     void Start()
     {
         if (gameManager == null)
         {
-            gameManager = GameObject.FindAnyObjectByType<GameManager>();
+            gameManager = FindAnyObjectByType<GameManager>();
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (canPickUp)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                gameManager.addSun();
+                sunUIEvent?.Invoke();
                 Destroy(this.gameObject);
             }
         }

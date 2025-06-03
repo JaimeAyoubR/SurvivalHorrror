@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class BatteryPickUp : MonoBehaviour
 {
-    public TextMeshProUGUI PickUpText;
     public bool CanPickUp = false;
-    public BatteryConsume battery;
+    public static Action batteryUIEvent;
 
     void Start()
     {
-        PickUpText.enabled = false;
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && CanPickUp == true)
@@ -26,7 +24,6 @@ public class BatteryPickUp : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PickUpText.enabled = true;
             CanPickUp = true;
         }
     }
@@ -35,15 +32,13 @@ public class BatteryPickUp : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PickUpText.enabled = false;
             CanPickUp = false;
         }
     }
 
     void PickUp()
     {
-        battery.AddBatteries();
-        PickUpText.enabled = false;
+        batteryUIEvent?.Invoke();
         Destroy(this.gameObject);
     }
 }

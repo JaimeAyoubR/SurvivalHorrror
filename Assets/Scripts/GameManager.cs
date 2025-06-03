@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public EnemyMovement enemyMovement;
 
 
-    public static Action<int> updateUI;
+    public static Action<int> updateSunsUI;
     public static Action winGame;
 
     private int numOfSunes;
@@ -148,6 +148,6 @@ public class GameManager : MonoBehaviour
 
     private void UpdateUI()
     {
-        updateUI?.Invoke(numOfSunes);
+        updateSunsUI?.Invoke(numOfSunes);
     }
 }

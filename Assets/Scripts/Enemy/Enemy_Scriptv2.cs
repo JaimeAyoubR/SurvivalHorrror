@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,6 +10,8 @@ using UnityEngine.Playables;
 
 public class Enemy_Scriptv2 : MonoBehaviour
 {
+    public static Action<Transform> attackEvent;
+
     [Header("Estados")]
     public EnemyState currentState = EnemyState.Patrol;
 
@@ -130,7 +133,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
         if (stateTimer >= waypointWaitTime)
         {
             // Posibilidad de emboscada
-            if (ambushPoints.Length > 0 && Random.value > 0.7f)
+            if (ambushPoints.Length > 0 && UnityEngine.Random.value > 0.7f)
             {
                 ChangeState(EnemyState.Ambush);
             }
@@ -155,8 +158,8 @@ public class Enemy_Scriptv2 : MonoBehaviour
         // Si esta en rango de ataque
         if (distanceToPlayer <= attackRange)
         {
-           // ChangeState(EnemyState.Attack);
-           director.Play();
+           ChangeState(EnemyState.Attack);
+           
             return;
         }
 
@@ -276,7 +279,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
 
             case EnemyState.Ambush:
                 isAmbushing = true;
-                int ambushIndex = Random.Range(0, ambushPoints.Length);
+                int ambushIndex = UnityEngine.Random.Range(0, ambushPoints.Length);
                 agent.SetDestination(ambushPoints[ambushIndex].position);
                 break;
 
@@ -340,7 +343,8 @@ public class Enemy_Scriptv2 : MonoBehaviour
 
     void PerformAttack()
     {
-        Debug.Log("Ataque");
+        director.Play();
+        attackEvent?.Invoke(transform);
     }
 
     #endregion

@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 
     void Win()
     {
-        //WIN
+        SceneManager.LoadScene("DeathScreen");
     }
 
     public void StartGame()

@@ -5632,11 +5632,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 617965107005849463, guid: 29a6810dff8f8e64fa46ce5a6fc4de44, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.029831024
+      value: 0.029831026
       objectReference: {fileID: 0}
     - target: {fileID: 617965107005849463, guid: 29a6810dff8f8e64fa46ce5a6fc4de44, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.12654218
+      value: -0.1265422
       objectReference: {fileID: 0}
     - target: {fileID: 4198572653377532275, guid: 29a6810dff8f8e64fa46ce5a6fc4de44, type: 3}
       propertyPath: m_Name
@@ -5684,11 +5684,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6128065636551514253, guid: 29a6810dff8f8e64fa46ce5a6fc4de44, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.045986596
+      value: 0.0459866
       objectReference: {fileID: 0}
     - target: {fileID: 6128065636551514253, guid: 29a6810dff8f8e64fa46ce5a6fc4de44, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0003775311
+      value: 0.00037753113
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 980294112126293616, guid: 29a6810dff8f8e64fa46ce5a6fc4de44, type: 3}
@@ -6340,6 +6340,8 @@ GameObject:
   - component: {fileID: 1542449143}
   - component: {fileID: 1542449142}
   - component: {fileID: 1542449141}
+  - component: {fileID: 1542449145}
+  - component: {fileID: 1542449144}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6395,6 +6397,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542449144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542449140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e9d0813c1820742a2cc726eeacef2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 613094430}
+  isPaused: 0
+--- !u!114 &1542449145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542449140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd4a01857475c846b25b1e92fd32c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1555248763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ba4814c9dfefa9048956dc798c383fbd, type: 3}

@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         updateSunsUI?.Invoke(numOfSunes);
         numOfSunes = 0;
+        AudioManager.PlayBGM(SoundType.AMBIENTE,0.5f);
     }
 
     void Update()

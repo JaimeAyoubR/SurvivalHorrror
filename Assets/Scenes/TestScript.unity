@@ -461,28 +461,6 @@ Transform:
   - {fileID: 1044332529}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &403006644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1324165837510685615, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
-  m_PrefabInstance: {fileID: 8710990867796650732}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &403006652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403006644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449ef5ebbe24720439ec31d15f7b6f3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Weight: 1.88
-  FocusTracking: 0
-  FocusTarget: {fileID: 0}
-  FocusOffset: 0
-  Profile: {fileID: 11400000, guid: 62379f777568e664fbbf3b000ea69ca3, type: 2}
 --- !u!1 &506258476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,9 +1638,7 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   enemyMovement: {fileID: 0}
   isPlayerSound: 0
-  isEnemySound: 0
   isMoviiiiig: 0
-  numbersOfSuns: 0
 --- !u!4 &1150819885
 Transform:
   m_ObjectHideFlags: 0
@@ -3929,14 +3905,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 360741515926357332, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
-      propertyPath: batteryText
-      value: 
-      objectReference: {fileID: 517166170}
-    - target: {fileID: 698649594565517408, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 1324165837510685615, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
       propertyPath: m_Name
       value: CinemachineCamera
@@ -3986,13 +3954,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1981478569}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6517956657409714903, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1324165837510685615, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403006652}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
 --- !u!33 &8773526482322278456
 MeshFilter:

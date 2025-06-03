@@ -11,7 +11,7 @@ public class DoorsScript : MonoBehaviour
     {
         Normal_Door,
         Sun_Door
-    }DoorType type;
+    }public DoorType type;
 
     public bool isOpen;
     public GameObject Pivot;
@@ -28,7 +28,7 @@ public class DoorsScript : MonoBehaviour
     void Start()
     {
         canOpen = false;
-        type = DoorType.Normal_Door;
+       // type = DoorType.Normal_Door;
     }
     private void Update()
     {
@@ -48,9 +48,23 @@ public class DoorsScript : MonoBehaviour
         if(type == DoorType.Sun_Door && sunNums == 2)
         {
             AudioManager.PlaySFX(SoundType.PUERTA);
+            if (!isOpen)
+            {
+                DOTween.KillAll();
+                targetRotationY = Pivot.transform.rotation.y - 90f;
+                Pivot.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast);
+                isOpen = true;
+            }
+            else
+            {
+                DOTween.KillAll();
+                targetRotationY = Pivot.transform.rotation.y + 90f;
+                Pivot.transform.DORotate(new Vector3(0, 90, 0), 0.2f, RotateMode.Fast);
+                isOpen = false;
+            }
 
         }
-        else
+        else if(type == DoorType.Normal_Door)
         {
             AudioManager.PlaySFX(SoundType.PUERTA);
 
@@ -68,6 +82,10 @@ public class DoorsScript : MonoBehaviour
                 Pivot.transform.DORotate(new Vector3(0, 90, 0), 0.2f, RotateMode.Fast);
                 isOpen = false;
             }
+        }
+        else
+        {
+            return;
         }
     }
 

@@ -2380,6 +2380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 703464253}
+  DeathUI: {fileID: 0}
+  WinUI: {fileID: 0}
   isPaused: 0
 --- !u!4 &843321235
 Transform:
@@ -3481,7 +3483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1230616354
 MonoBehaviour:
   m_ObjectHideFlags: 0

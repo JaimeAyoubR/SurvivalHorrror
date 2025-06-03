@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseUI;
+    public GameObject DeathUI;
+    public GameObject WinUI;
     public bool isPaused = false;
 
     private void OnEnable()
@@ -26,12 +28,12 @@ public class PauseMenu : MonoBehaviour
 
     public void LooseGame(Transform aaaa)
     {
-        //LOOSE
+       DeathUI.SetActive(true);
     }
 
     public void WinGame()
     {
-        //WIN
+        WinUI.SetActive(true);
     }
 
     public void Resume()

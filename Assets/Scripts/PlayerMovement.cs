@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public CinemachineVirtualCameraBase camera;
     private bool isMoving;
 
-        public PlayableDirector  director;
+    public PlayableDirector  director;
 
     private float X;
     private float Z;
@@ -21,13 +21,16 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioManager audioManager;
 
+    private void OnEnable()
+    {
+        Enemy_Scriptv2.attackEvent += LookAtt;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-       
     }
 
     void Start()
@@ -62,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         Rotate();
+    }
+
+    void LookAtt(Transform enemyT)
+    {
+        transform.LookAt(enemyT);
     }
 
     void Move()

@@ -39,6 +39,7 @@ public class FlashLight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && battery.haveBatteries == true)
         {
+            AudioManager.PlaySFX(SoundType.LINTERNA);
             isOn = !isOn;
             LightFont.enabled = isOn;
         }

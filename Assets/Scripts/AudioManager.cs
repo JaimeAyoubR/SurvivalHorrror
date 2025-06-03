@@ -33,6 +33,11 @@ public class AudioManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+
+    void Update()
+    {
+       PlaySFX(SoundType.AMBIENTE);
+    }
     public static void PlaySFX(SoundType clip, float volume = 1f)
     {   
         instance.audioSource.PlayOneShot(instance.soundList[(int)clip], volume);
@@ -43,7 +48,7 @@ public class AudioManager : MonoBehaviour
         float random = Random.Range(minValue,maxValue);
         instance.audioSource.pitch = random;
         PlaySFX(clip, volume);
-       // ResetPitch();
+        ResetPitch();
     }
     
     public void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume = 1f)

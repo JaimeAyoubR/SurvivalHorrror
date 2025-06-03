@@ -346,16 +346,16 @@ public class Enemy_Scriptv2 : MonoBehaviour
     {
         agent.velocity = Vector3.zero;
         director.Play();
-        attackEvent?.Invoke(transform);
+      
     }
 
 
     private IEnumerator DelayedAttackCoroutine()
     {
-        yield return new WaitForSeconds(2f);
 
         PerformAttack();
-
+        yield return new WaitForSeconds(2f);
+        attackEvent?.Invoke(transform);
     }
 
     #endregion

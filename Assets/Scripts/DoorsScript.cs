@@ -12,16 +12,13 @@ public class DoorsScript : MonoBehaviour
         Sun_Door
     }
 
-    [Header("Door Configuration")]
-    public DoorType type;
+    [Header("Door Configuration")] public DoorType type;
     public GameObject Pivot;
     public TextMeshProUGUI OpenText;
 
-    [Header("Sun Door Settings")]
-    public int requiredSuns = 2;
+    [Header("Sun Door Settings")] public int requiredSuns = 2;
 
-    [Header("Door Status")]
-    public bool isOpen = true;
+    [Header("Door Status")] public bool isOpen = true;
     public bool canOpen = false;
 
     private float targetRotationY;
@@ -69,7 +66,7 @@ public class DoorsScript : MonoBehaviour
             return;
         }
 
-        //AudioManager.PlaySFX(SoundType.PUERTA);
+
         AnimateDoor();
         UpdateUIText();
     }
@@ -93,6 +90,7 @@ public class DoorsScript : MonoBehaviour
 
     private void AnimateDoor()
     {
+        AudioManager.PlaySFX(SoundType.PUERTA);
         DOTween.Kill(Pivot.transform);
 
         if (!isOpen)
@@ -130,6 +128,7 @@ public class DoorsScript : MonoBehaviour
                 {
                     OpenText.text = $"Need {requiredSuns - sunNums} more suns";
                 }
+
                 break;
         }
     }
@@ -172,6 +171,7 @@ public class DoorsScript : MonoBehaviour
             }
         }
     }
+
     public string GetDoorStatus()
     {
         return $"Type: {type}, Open: {isOpen}, Suns: {sunNums}/{requiredSuns}, Can Open: {CanOpenDoor()}";

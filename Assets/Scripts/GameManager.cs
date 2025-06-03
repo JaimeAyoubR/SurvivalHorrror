@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+      
         CheckPlayerMoving();
         if (numOfSunes >= 3)
         {
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            AudioManager.StopSFX();
+            //AudioManager.StopSFX();
             //audioManager.StopSFX(audioManager.PlayerStepsource);
             StopAllCoroutines();
             isPlayerSound = false;
@@ -82,7 +83,6 @@ public class GameManager : MonoBehaviour
         isPlayerSound = true;
         yield return new WaitForSeconds(0.4f);
         AudioManager.PlaySFXRandom(SoundType.PASOS, 0.40f, 0.55f);
-        //audioManager.PlaySFXRandom(audioManager.PlayerStepsource, 0.40f, 0.55f);
         isPlayerSound = false;
     }
 

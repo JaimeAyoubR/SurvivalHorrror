@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,8 +13,22 @@ public class PauseMenu : MonoBehaviour
     {
         GameManager.winGame += WinGame;
         Enemy_Scriptv2.attackEvent += LoseGame;
+
+        pauseUI = GameObject.FindGameObjectWithTag("PauseMenu");
+
+        DeathUI = GameObject.FindGameObjectWithTag("DeathMenu");
+
+        WinUI = GameObject.FindGameObjectWithTag("VictoryMenu");
+
+        pauseUI.GetComponent<Canvas>().enabled = false;
+        WinUI.GetComponent<Canvas>().enabled = false;
+        DeathUI.GetComponent<Canvas>().enabled = false;
     }
 
+
+    private void Start()
+    {
+    }
 
     void Update()
     {
@@ -28,17 +43,23 @@ public class PauseMenu : MonoBehaviour
 
     public void LoseGame(Transform aaaa)
     {
-       DeathUI.SetActive(true);
+        if (DeathUI == null)
+            DeathUI = GameObject.FindGameObjectWithTag("DeathMenu");
+        Cursor.lockState = CursorLockMode.None;
+        DeathUI.GetComponent<Canvas>().enabled = true;
     }
 
     public void WinGame()
     {
-        WinUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        if (WinUI == null)
+            WinUI = GameObject.FindGameObjectWithTag("VictoryMenu");
+        WinUI.GetComponent<Canvas>().enabled = true;
     }
 
     public void Resume()
     {
-        pauseUI.SetActive(false);
+        pauseUI.GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1f;
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -47,7 +68,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        pauseUI.SetActive(true);
+        pauseUI.GetComponent<Canvas>().enabled = true;
         Time.timeScale = 0f;
         isPaused = true;
         Cursor.lockState = CursorLockMode.None;

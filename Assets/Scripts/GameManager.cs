@@ -51,7 +51,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-      
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            numOfSunes = 3;
+        }
         CheckPlayerMoving();
         if (numOfSunes >= 3)
         {

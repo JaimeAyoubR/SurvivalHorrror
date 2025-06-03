@@ -7,7 +7,7 @@ public class BatteryConsume : MonoBehaviour
     public int numOfBatteries;
     public bool haveBatteries;
     public float LifeBattery;
-
+    public static Action<int> batteryUIEvent;
     private void OnEnable()
     {
         BatteryPickUp.batteryUIEvent += AddBatteries;
@@ -58,6 +58,7 @@ public class BatteryConsume : MonoBehaviour
    public void AddBatteries()
     {
         numOfBatteries++;
+        batteryUIEvent?.Invoke(numOfBatteries);
     }
 
     void RemoveBatteries()

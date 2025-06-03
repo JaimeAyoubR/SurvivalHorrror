@@ -14,23 +14,26 @@ public class UI_Manager1 : MonoBehaviour
     
     private void OnEnable()
     {
-        GameManager.updateUI += CheckWin;
+        GameManager.updateUI += UpdateSuns;
+        BatteryConsume.batteryUIEvent += UpdateBatterys;
     }
 
     private void OnDisable()
     {
-        GameManager.updateUI -= CheckWin;
+        GameManager.updateUI -= UpdateSuns;
+        BatteryConsume.batteryUIEvent -= UpdateBatterys;
     }
 
-    private void CheckWin(int battery, int suns)
+
+    void UpdateSuns(int suns)
     {
-        numOfBatteries += battery;
-        batteryText.text = numOfBatteries.ToString();
-
-        numOfSunes += suns;
-        sunText.text = numOfSunes.ToString();
+        batteryText.text = suns.ToString();
     }
 
+    void UpdateBatterys(int battery)
+    {
+        batteryText.text = battery.ToString();
+    }
     public void WinGame()
     {
        //WIN WIN 

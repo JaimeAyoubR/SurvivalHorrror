@@ -27,6 +27,7 @@ public class DoorsScript : MonoBehaviour
 
     public void OpenDoor()
     {
+      
         if (!isOpen)
         {
             DOTween.KillAll();

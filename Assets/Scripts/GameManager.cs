@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         isPlayerSound = true;
         yield return new WaitForSeconds(0.4f);
-        AudioManager.PlaySFXRandom(SoundType.PASOS, 0.10f, 0.55f);
+        AudioManager.PlaySFXRandom(SoundType.PASOS, 0.40f, 0.55f);
         //audioManager.PlaySFXRandom(audioManager.PlayerStepsource, 0.40f, 0.55f);
         isPlayerSound = false;
     }

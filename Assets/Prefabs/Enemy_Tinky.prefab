@@ -677,8 +677,7 @@ GameObject:
   - component: {fileID: 4490101305571550745}
   - component: {fileID: 1467053025194313765}
   - component: {fileID: 7347160213593472937}
-  - component: {fileID: 7999004515130271736}
-  - component: {fileID: 5462321060077792774}
+  - component: {fileID: 980294112126293616}
   m_Layer: 0
   m_Name: Enemy_Tinky
   m_TagString: Untagged
@@ -747,7 +746,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7999004515130271736
+--- !u!114 &980294112126293616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -756,31 +755,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4198572653377532275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fdc9144f1991c40bf52029ade58e79, type: 3}
+  m_Script: {fileID: 11500000, guid: 25e05975455219545a9acf269e7d6711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepSounds: []
-  audioSource: {fileID: 0}
-  maxHearingDistance: 15
-  minHearingDistance: 2
-  stepInterval: 0.5
-  runningStepInterval: 0.3
-  maxVolume: 1
-  minVolume: 0.1
---- !u!114 &5462321060077792774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4198572653377532275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c85ccf140b1eed42be5d46c4d30f019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
   patrolSpeed: 3
   waypointWaitTime: 5
   followSpeed: 5
@@ -788,8 +768,6 @@ MonoBehaviour:
   followRange: 7
   ambushPoints: []
   ambushWaitTime: 3
-  attackRange: 2
-  attackCooldown: 2
 --- !u!1 &4417142098459098623
 GameObject:
   m_ObjectHideFlags: 0

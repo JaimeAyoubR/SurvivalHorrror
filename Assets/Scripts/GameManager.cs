@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     private int numOfSunes;
 
     public bool isPlayerSound;
-    public bool isEnemySound;
     public bool isMoviiiiig;
 
     private void OnEnable()
@@ -46,7 +45,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckPlayerMoving();
-        CheckEnemyMove();
         if (numOfSunes >= 3)
         {
             winGame?.Invoke();
@@ -71,23 +69,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void CheckEnemyMove()
-    {
-        if (enemyMovement.returnMove())
-        {
-            if (isEnemySound == false)
-            {
-                StartCoroutine(EnemyWalkSound());
-            }
-        }
-        else 
-        {
-            AudioManager.StopSFX();
-            //audioManager.StopSFX(audioManager.EnemyStepsource);
-            StopAllCoroutines();
-            isEnemySound = false;
-        }
-    }
+
 
     private IEnumerator PlayerWalkSound()
     {
@@ -98,15 +80,7 @@ public class GameManager : MonoBehaviour
         isPlayerSound = false;
     }
 
-    IEnumerator EnemyWalkSound()
-    {
-        isEnemySound = true;
-        yield return new WaitForSeconds(0.4f);
-        AudioManager.PlaySFXRandom(SoundType.PASOS_ENEMY, 0.40f, 0.55f);
-        //audioManager.PlaySFXRandom(audioManager.EnemyStepsource,audioManager.enemyFootStep, 0.40f, 0.55f);
 
-        isEnemySound = false;
-    }
 
     void CheckComponents()
     {

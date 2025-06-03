@@ -3497,7 +3497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00fdc9144f1991c40bf52029ade58e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepSounds: []
+  footstepSounds:
+  - {fileID: 8300000, guid: 29fa806769af05e4fa0083c05c92dfc7, type: 3}
   audioSource: {fileID: 0}
   maxHearingDistance: 15
   minHearingDistance: 2
@@ -3742,7 +3743,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00fdc9144f1991c40bf52029ade58e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepSounds: []
+  footstepSounds:
+  - {fileID: 8300000, guid: 29fa806769af05e4fa0083c05c92dfc7, type: 3}
   audioSource: {fileID: 0}
   maxHearingDistance: 15
   minHearingDistance: 2
@@ -4661,7 +4663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00fdc9144f1991c40bf52029ade58e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepSounds: []
+  footstepSounds:
+  - {fileID: 8300000, guid: 29fa806769af05e4fa0083c05c92dfc7, type: 3}
   audioSource: {fileID: 0}
   maxHearingDistance: 15
   minHearingDistance: 2
@@ -4719,7 +4722,6 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   enemyMovement: {fileID: 0}
   isPlayerSound: 0
-  isEnemySound: 0
   isMoviiiiig: 0
 --- !u!4 &1542449143
 Transform:

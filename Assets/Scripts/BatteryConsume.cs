@@ -18,10 +18,15 @@ public class BatteryConsume : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.L))
+            numOfBatteries = 500;
         if (haveBatteries)
         {
             BatteriesConsumed();
         }
+
+        if (numOfBatteries > 0)
+            haveBatteries = true;
     }
 
     void BatteriesConsumed()

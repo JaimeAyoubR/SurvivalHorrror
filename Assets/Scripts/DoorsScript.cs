@@ -10,6 +10,7 @@ public class DoorsScript : MonoBehaviour
     public GameObject Pivot;
     public TextMeshProUGUI OpenText;
     public bool canOpen = false;
+    private float targetRotationY;
 
 
     void Start()
@@ -28,12 +29,16 @@ public class DoorsScript : MonoBehaviour
     {
         if (!isOpen)
         {
-            Pivot.transform.DORotate(new Vector3(0, -90, 0), 0.2f, RotateMode.Fast);
+            DOTween.KillAll();
+            targetRotationY = Pivot.transform.rotation.y - 90f;
+            Pivot.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast);
             isOpen = true;
         }
         else
         {
-            Pivot.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast);
+            DOTween.KillAll();
+            targetRotationY = Pivot.transform.rotation.y + 90f;
+            Pivot.transform.DORotate(new Vector3(0, 90, 0), 0.2f, RotateMode.Fast);
             isOpen = false;
         }
     }

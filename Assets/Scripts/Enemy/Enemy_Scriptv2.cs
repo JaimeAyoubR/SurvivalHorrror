@@ -73,7 +73,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
 
         // Actualizar animator
         animator.SetBool("isWaiting", isWaiting);
-        animator.SetBool("isMoving", agent.velocity.magnitude > 0.1f);
+      //  animator.SetBool("isMoving", agent.velocity.magnitude > 0.1f);
 
         // Ejecutar logica del estado actual
         switch (currentState)

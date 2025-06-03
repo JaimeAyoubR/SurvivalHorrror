@@ -343,6 +343,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
 
     void PerformAttack()
     {
+        agent.velocity = Vector3.zero;
         director.Play();
         attackEvent?.Invoke(transform);
     }

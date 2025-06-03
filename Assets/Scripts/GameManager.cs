@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
     public EnemyMovement enemyMovement;
 
 
-    public static Action<int> updateUI;
+    public static Action<int> updateSunsUI;
     public static Action winGame;
 
-    private int numOfSunes;
+    private int numOfSunes = 0;
 
     public bool isPlayerSound;
     public bool isEnemySound;
@@ -141,13 +141,6 @@ public class GameManager : MonoBehaviour
     void AddSun()
     {
         numOfSunes++;
-        UpdateUI();
-    }
-
-   
-
-    private void UpdateUI()
-    {
-        updateUI?.Invoke(numOfSunes);
+        updateSunsUI?.Invoke(numOfSunes);
     }
 }

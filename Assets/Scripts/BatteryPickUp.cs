@@ -38,6 +38,7 @@ public class BatteryPickUp : MonoBehaviour
 
     void PickUp()
     {
+        AudioManager.PlaySFX(SoundType.RECOLECTAR_ITEM);
         batteryUIEvent?.Invoke();
         Destroy(this.gameObject);
     }

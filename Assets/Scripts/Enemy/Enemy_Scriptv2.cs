@@ -3,6 +3,7 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Playables;
+using System.Collections;
 
 /*
  * TODO Poner trigger en el enemy
@@ -205,7 +206,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
         // Atacar si ha pasado el cooldown
         if (Time.time - lastAttackTime >= attackCooldown)
         {
-            PerformAttack();
+            StartCoroutine(DelayedAttackCoroutine());
             lastAttackTime = Time.time;
         }
 
@@ -346,6 +347,15 @@ public class Enemy_Scriptv2 : MonoBehaviour
         agent.velocity = Vector3.zero;
         director.Play();
         attackEvent?.Invoke(transform);
+    }
+
+
+    private IEnumerator DelayedAttackCoroutine()
+    {
+        yield return new WaitForSeconds(2f);
+
+        PerformAttack();
+
     }
 
     #endregion

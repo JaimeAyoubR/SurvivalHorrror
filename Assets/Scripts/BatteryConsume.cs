@@ -27,8 +27,8 @@ public class BatteryConsume : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
-            numOfBatteries = 500;
+        //if(Input.GetKeyDown(KeyCode.L))
+            //numOfBatteries = 500;
         if (haveBatteries)
         {
             BatteriesConsumed();
@@ -40,7 +40,7 @@ public class BatteryConsume : MonoBehaviour
 
     void BatteriesConsumed()
     {
-        if ((Time.time - LifeBattery) >= 10)
+        if ((Time.time - LifeBattery) >= 40)
         {
             RemoveBatteries();
             LifeBattery = Time.time;

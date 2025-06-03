@@ -39,7 +39,7 @@ public class DoorsScript : MonoBehaviour
 
     void Start()
     {
-        canOpen = true;
+        canOpen = false;
         UpdateUIText();
     }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PickUpSun : MonoBehaviour
 {
-    public GameManager gameManager;
     public static Action sunUIEvent;
     public TextMeshProUGUI PickText;
 
@@ -12,10 +11,7 @@ public class PickUpSun : MonoBehaviour
 
     void Start()
     {
-        if (gameManager == null)
-        {
-            gameManager = FindAnyObjectByType<GameManager>();
-        }
+
     }
 
     void Update()

@@ -53,6 +53,7 @@ public class DoorsScript : MonoBehaviour
 
     void AddSuns()
     {
+        Debug.Log("MAS 1 SOLESITO MI VIDA");
         sunNums++;
 
         if (canOpen)

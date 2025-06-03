@@ -27,12 +27,12 @@ public class UI_Manager1 : MonoBehaviour
 
     void UpdateSuns(int suns)
     {
-        batteryText.text = suns.ToString();
+        batteryText.text ="X" + " " + suns.ToString();
     }
 
     void UpdateBatterys(int battery)
     {
-        batteryText.text = battery.ToString();
+        batteryText.text = "X" + " " + battery.ToString();
     }
     public void WinGame()
     {

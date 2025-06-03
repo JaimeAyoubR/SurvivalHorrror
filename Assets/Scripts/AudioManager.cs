@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour
         float random = Random.Range(minValue,maxValue);
         instance.audioSource.pitch = random;
         PlaySFX(clip, volume);
-        ResetPitch();
+       // ResetPitch();
     }
     
     public void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume = 1f)

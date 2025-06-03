@@ -20,6 +20,7 @@ public class BatteryConsume : MonoBehaviour
 
     void Start()
     {
+        batteryUIEvent?.Invoke(numOfBatteries);
         numOfBatteries = 5;
         haveBatteries = true;
     }
@@ -67,5 +68,6 @@ public class BatteryConsume : MonoBehaviour
         {
             numOfBatteries--;
         }
+        batteryUIEvent?.Invoke(numOfBatteries);
     }
 }

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public static Action<int> updateSunsUI;
     public static Action winGame;
 
-    private int numOfSunes = 0;
+    private int numOfSunes;
 
     public bool isPlayerSound;
     public bool isMoviiiiig;
@@ -40,6 +40,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         CheckComponents();
+    }
+
+    private void Start()
+    {
+        updateSunsUI?.Invoke(numOfSunes);
+        numOfSunes = 0;
     }
 
     void Update()

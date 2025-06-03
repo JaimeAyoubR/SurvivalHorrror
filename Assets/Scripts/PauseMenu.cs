@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     private void OnEnable()
     {
         GameManager.winGame += WinGame;
-        Enemy_Scriptv2.attackEvent += LooseGame;
+        Enemy_Scriptv2.attackEvent += LoseGame;
     }
 
 
@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void LooseGame(Transform aaaa)
+    public void LoseGame(Transform aaaa)
     {
         //LOOSE
     }

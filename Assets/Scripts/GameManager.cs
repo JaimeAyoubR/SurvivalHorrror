@@ -11,11 +11,10 @@ public class GameManager : MonoBehaviour
     public EnemyMovement enemyMovement;
 
 
-    public static Action<int, int> updateUI;
+    public static Action<int> updateUI;
     public static Action winGame;
 
     private int numOfSunes;
-    private int numOfBatterys;
 
     public bool isPlayerSound;
     public bool isEnemySound;
@@ -24,14 +23,13 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         PickUpSun.sunUIEvent += AddSun;
-        BatteryPickUp.batteryUIEvent += AddBattery;
     }
 
     private void OnDisable()
     {
         PickUpSun.sunUIEvent -= AddSun;
-        BatteryPickUp.batteryUIEvent -= AddBattery;
     }
+
     void Awake()
     {
         if (instance == null)
@@ -146,14 +144,10 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
-    void AddBattery()
-    {
-        numOfBatterys++;
-        UpdateUI();
-    }
+   
 
     private void UpdateUI()
     {
-        updateUI?.Invoke(numOfBatterys, numOfSunes);
+        updateUI?.Invoke(numOfSunes);
     }
 }

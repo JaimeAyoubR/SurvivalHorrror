@@ -4,9 +4,7 @@ using UnityEngine;
 public enum SoundType
 {
     PASOS,
-
     PASOS_ENEMY,
-
     PUERTA,
     ENEMY,
     LINTERNA, 
@@ -40,10 +38,10 @@ public class AudioManager : MonoBehaviour
         instance.audioSource.PlayOneShot(instance.soundList[(int)clip], volume);
     }
 
-    public void PlaySFXRandom(SoundType clip, float minValue, float maxValue, float volume = 1f)
+    public static void PlaySFXRandom(SoundType clip, float minValue, float maxValue, float volume = 1f)
     {
         float random = Random.Range(minValue,maxValue);
-        audioSource.pitch = random;
+        instance.audioSource.pitch = random;
         PlaySFX(clip, volume);
         ResetPitch();
     }
@@ -58,14 +56,14 @@ public class AudioManager : MonoBehaviour
         //DESTROY
     }
 
-    private void ResetPitch()
+    private static void ResetPitch()
     {
-        audioSource.pitch = 1;
+        instance.audioSource.pitch = 1;
     }
 
-    public void StopSFX(AudioSource source)
+    public static void StopSFX()
     {
-        source.Stop();
+        instance.audioSource.Stop();
     }
     
 }

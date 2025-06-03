@@ -1,6 +1,7 @@
 using System.Net;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Playables;
 
 /*
  * TODO Poner trigger en el enemy
@@ -42,6 +43,8 @@ public class Enemy_Scriptv2 : MonoBehaviour
     private bool isFollowing = false;
     private bool isMoving = false;
     private float stateTimer = 0f;
+    
+    private PlayableDirector director;
 
     // Enum para los estados
     public enum EnemyState
@@ -58,6 +61,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        director = GetComponent<PlayableDirector>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         agent.autoBraking = true;
@@ -73,7 +77,7 @@ public class Enemy_Scriptv2 : MonoBehaviour
 
         // Actualizar animator
         animator.SetBool("isWaiting", isWaiting);
-        animator.SetBool("isMoving", agent.velocity.magnitude > 0.1f);
+      //  animator.SetBool("isMoving", agent.velocity.magnitude > 0.1f);
 
         // Ejecutar logica del estado actual
         switch (currentState)
@@ -151,7 +155,8 @@ public class Enemy_Scriptv2 : MonoBehaviour
         // Si esta en rango de ataque
         if (distanceToPlayer <= attackRange)
         {
-            ChangeState(EnemyState.Attack);
+           // ChangeState(EnemyState.Attack);
+           director.Play();
             return;
         }
 

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -6,22 +7,34 @@ public class BatteryConsume : MonoBehaviour
     public int numOfBatteries;
     public bool haveBatteries;
     public float LifeBattery;
-    public TextMeshProUGUI batteryText;
+
+    private void OnEnable()
+    {
+        BatteryPickUp.batteryUIEvent += AddBatteries;
+    }
+
+    private void OnDisable()
+    {
+        BatteryPickUp.batteryUIEvent -= AddBatteries;
+    }
 
     void Start()
     {
         numOfBatteries = 5;
         haveBatteries = true;
-        UpdateText();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.L))
+            numOfBatteries = 500;
         if (haveBatteries)
         {
             BatteriesConsumed();
         }
+
+        if (numOfBatteries > 0)
+            haveBatteries = true;
     }
 
     void BatteriesConsumed()
@@ -45,7 +58,6 @@ public class BatteryConsume : MonoBehaviour
    public void AddBatteries()
     {
         numOfBatteries++;
-        UpdateText();
     }
 
     void RemoveBatteries()
@@ -53,12 +65,6 @@ public class BatteryConsume : MonoBehaviour
         if (numOfBatteries > 0)
         {
             numOfBatteries--;
-            UpdateText();
         }
-    }
-
-    void UpdateText()
-    {
-        batteryText.text = numOfBatteries.ToString();
     }
 }

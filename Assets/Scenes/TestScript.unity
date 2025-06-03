@@ -531,7 +531,7 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512192891}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: b91ed910ecab01a4a868f7b126e44bea, type: 2}
   m_InitialState: 1
@@ -1656,9 +1656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87283f21d7f05d140b3ce806819e50ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   playerMovement: {fileID: 0}
   enemyMovement: {fileID: 0}
-  audioManager: {fileID: 0}
   isPlayerSound: 0
   isEnemySound: 0
   isMoviiiiig: 0

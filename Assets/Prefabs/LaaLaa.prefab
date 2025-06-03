@@ -2000,7 +2000,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7824202284493096896}
-  - component: {fileID: -3071092357407283713}
   m_Layer: 0
   m_Name: LaaLaa
   m_TagString: Untagged
@@ -2026,26 +2025,6 @@ Transform:
   - {fileID: 3218087566547917380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 172.335, z: 0}
---- !u!114 &-3071092357407283713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3707766146843034106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aefd566893ca9c44b30ad1d7a663c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  player: {fileID: 0}
-  rotationSpeed: 5
-  useRange: 0
-  maxDistance: 10
-  useFieldOfView: 0
-  fieldOfViewAngle: 90
-  showDebugLines: 1
 --- !u!1 &3722086141639553450
 GameObject:
   m_ObjectHideFlags: 0

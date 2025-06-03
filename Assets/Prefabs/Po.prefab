@@ -2152,9 +2152,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4796589109026938569}
   - component: {fileID: 4302066245062422223}
-  - component: {fileID: 553723777149934972}
-  - component: {fileID: -911738635823427684}
-  - component: {fileID: -8902987723466437215}
   m_Layer: 0
   m_Name: Po
   m_TagString: Untagged
@@ -2201,71 +2198,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!195 &553723777149934972
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8134864757359692689}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &-911738635823427684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8134864757359692689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00fdc9144f1991c40bf52029ade58e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footstepSounds: []
-  audioSource: {fileID: 0}
-  maxHearingDistance: 15
-  minHearingDistance: 2
-  stepInterval: 0.5
-  runningStepInterval: 0.3
-  maxVolume: 1
-  minVolume: 0.1
---- !u!114 &-8902987723466437215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8134864757359692689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c85ccf140b1eed42be5d46c4d30f019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  waypoints: []
-  patrolSpeed: 3
-  waypointWaitTime: 5
-  followSpeed: 5
-  detectionRadius: 5
-  followRange: 7
-  ambushPoints: []
-  ambushWaitTime: 3
-  attackRange: 2
-  attackCooldown: 2
 --- !u!1 &8173703096505407383
 GameObject:
   m_ObjectHideFlags: 0

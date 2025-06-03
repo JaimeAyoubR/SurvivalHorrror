@@ -4,6 +4,8 @@ using UnityEngine;
 public class PickUpSun : MonoBehaviour
 {
    public GameManager  gameManager;
+    public static Action sunUIEvent;
+
     public bool canPickUp = false;
     void Start()
     {
@@ -19,7 +21,7 @@ public class PickUpSun : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                gameManager.addSun();
+                sunUIEvent?.Invoke();
                 Destroy(this.gameObject);
             }
         }

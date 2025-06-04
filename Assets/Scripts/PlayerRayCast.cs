@@ -8,6 +8,7 @@ public class PlayerRayCast : MonoBehaviour
 
     public static Action seeEvent;
     private Camera playerCamera;
+    private bool isView =true;
 
     void Start()
     {
@@ -34,15 +35,18 @@ public class PlayerRayCast : MonoBehaviour
         // Lanzar el raycast
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance) && hit.collider.tag == "TP")
         {
-            StartCoroutine(RayCastCR());
+            if(isView)
+                StartCoroutine(RayCastCR());
         }
     }
 
     IEnumerator RayCastCR()
     {
+        isView = false;
         float rand = UnityEngine.Random.Range(0.5f, 2f);
         yield return new WaitForSeconds(rand);
         seeEvent?.Invoke();
+        isView = true;
     }
 
     // Debug

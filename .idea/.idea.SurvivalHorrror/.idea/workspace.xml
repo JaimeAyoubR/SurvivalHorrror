@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27a4a503-1f27-497d-8068-2dd1124f8d97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Cinematicas/DipsyScreamer.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cinematicas/DipsyScreamer.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerRayCast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerRayCast.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,15 +131,13 @@
       <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22268">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="22268" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -167,7 +164,8 @@
       <workItem from="1748632313040" duration="8489000" />
       <workItem from="1748827679573" duration="1625000" />
       <workItem from="1748901215773" duration="1235000" />
-      <workItem from="1748990060888" duration="6733000" />
+      <workItem from="1748990060888" duration="7181000" />
+      <workItem from="1748998571179" duration="523000" />
     </task>
     <servers />
   </component>
@@ -202,13 +200,13 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/PickUpSun.cs</url>
-          <line>26</line>
+          <line>22</line>
           <properties documentPath="C:\Users\jaimi\OneDrive\Escritorio\UnityProjects\SurvivalHorrror\SurvivalHorrror\Assets\Scripts\PickUpSun.cs" containingFunctionPresentation="Method 'Update'">
             <startOffsets>
-              <option value="512" />
+              <option value="362" />
             </startOffsets>
             <endOffsets>
-              <option value="560" />
+              <option value="410" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />

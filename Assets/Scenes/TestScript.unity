@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2679521973899896841, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.427451
+      value: -2.93
       objectReference: {fileID: 0}
     - target: {fileID: 2679521973899896841, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: m_LocalPosition.y
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2679521973899896841, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.8510494
+      value: 14.43
       objectReference: {fileID: 0}
     - target: {fileID: 2679521973899896841, guid: 9bbb9eca712162b4bb7dba94081ce823, type: 3}
       propertyPath: m_LocalRotation.w
@@ -424,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 344812663}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.450735, y: 2.930282, z: -2.2007227}
+  m_LocalPosition: {x: -37.66, y: 2.930282, z: -2.2007227}
   m_LocalScale: {x: -2.5383887, y: 14.444, z: 45.70515}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -929,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pedazo3
       objectReference: {fileID: 0}
+    - target: {fileID: 5677649073735404944, guid: 00dad83e61a82e249938c02741c18144, type: 3}
+      propertyPath: PickText
+      value: 
+      objectReference: {fileID: 2000750362}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2375,7 +2379,7 @@ Transform:
   m_GameObject: {fileID: 1591313924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.835899, y: 3.3869917, z: 7.1847734}
+  m_LocalPosition: {x: -5.19335, y: 3.3869917, z: 13.763724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2612,6 +2616,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2485417007189367406, guid: 25470822235b6944a9b12d6acde330be, type: 3}
+      propertyPath: PickText
+      value: 
+      objectReference: {fileID: 2000750362}
     - target: {fileID: 3142807420649478896, guid: 25470822235b6944a9b12d6acde330be, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.028071
@@ -2918,6 +2926,14 @@ PrefabInstance:
     - target: {fileID: 5356538766887876819, guid: b8d4e43174889144e95634d0d66bba16, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356538766887876819, guid: b8d4e43174889144e95634d0d66bba16, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696994430289490686, guid: b8d4e43174889144e95634d0d66bba16, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4295,7 +4311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2724220707330464147, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.835899
+      value: -5.19335
       objectReference: {fileID: 0}
     - target: {fileID: 2724220707330464147, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4303,7 +4319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2724220707330464147, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.1847734
+      value: 13.763724
       objectReference: {fileID: 0}
     - target: {fileID: 2724220707330464147, guid: ed49cb67ef9c7a742b245fd960ca971f, type: 3}
       propertyPath: m_LocalRotation.w

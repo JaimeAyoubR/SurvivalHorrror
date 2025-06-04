@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerRayCast : MonoBehaviour
@@ -28,11 +29,20 @@ public class PlayerRayCast : MonoBehaviour
 
         RaycastHit hit;
 
+        
+
         // Lanzar el raycast
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance) && hit.collider.tag == "TP")
         {
-            seeEvent?.Invoke();
+            StartCoroutine(RayCastCR());
         }
+    }
+
+    IEnumerator RayCastCR()
+    {
+        float rand = UnityEngine.Random.Range(0.5f, 2f);
+        yield return new WaitForSeconds(rand);
+        seeEvent?.Invoke();
     }
 
     // Debug

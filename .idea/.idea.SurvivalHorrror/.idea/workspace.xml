@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27a4a503-1f27-497d-8068-2dd1124f8d97" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalHorrror/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerRayCast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerRayCast.cs" afterDir="false" />
-    </list>
+    <list default="true" id="27a4a503-1f27-497d-8068-2dd1124f8d97" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,7 +162,7 @@
       <workItem from="1748827679573" duration="1625000" />
       <workItem from="1748901215773" duration="1235000" />
       <workItem from="1748990060888" duration="7181000" />
-      <workItem from="1748998571179" duration="523000" />
+      <workItem from="1748998571179" duration="839000" />
     </task>
     <servers />
   </component>

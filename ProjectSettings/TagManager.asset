@@ -8,6 +8,7 @@ TagManager:
   - VictoryMenu
   - DeathMenu
   - PauseMenu
+  - PickUpText
   layers:
   - Default
   - TransparentFX

@@ -232,6 +232,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6718634320100618218, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
+      propertyPath: PickText
+      value: 
+      objectReference: {fileID: 989607762}
     - target: {fileID: 8985337781323252635, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
       propertyPath: m_Name
       value: Pila (1)
@@ -1503,6 +1507,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6718634320100618218, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
+      propertyPath: PickText
+      value: 
+      objectReference: {fileID: 989607762}
     - target: {fileID: 8985337781323252635, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
       propertyPath: m_Name
       value: Pila (2)
@@ -1560,6 +1568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6718634320100618218, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
+      propertyPath: PickText
+      value: 
+      objectReference: {fileID: 989607762}
     - target: {fileID: 8985337781323252635, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
       propertyPath: m_Name
       value: Pila (4)
@@ -1617,6 +1629,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6718634320100618218, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
+      propertyPath: PickText
+      value: 
+      objectReference: {fileID: 989607762}
     - target: {fileID: 8985337781323252635, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
       propertyPath: m_Name
       value: Pila
@@ -4649,7 +4665,7 @@ GameObject:
   - component: {fileID: 989607762}
   m_Layer: 5
   m_Name: PickUp
-  m_TagString: Untagged
+  m_TagString: PickUpText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5064,6 +5080,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6718634320100618218, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
+      propertyPath: PickText
+      value: 
+      objectReference: {fileID: 989607762}
     - target: {fileID: 8985337781323252635, guid: be0d9d03f89467842b65d55c2689836a, type: 3}
       propertyPath: m_Name
       value: Pila (3)

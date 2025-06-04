@@ -11,6 +11,10 @@ public class PickUpSun : MonoBehaviour
 
     void Start()
     {
+        if (PickText == null)
+        {
+            //PickText = GameObject.FindGameObjectWithTag("PickUpText")
+        }
 
     }
 

@@ -6,6 +6,7 @@ public class BatteryPickUp : MonoBehaviour
 {
     public bool CanPickUp = false;
     public static Action batteryUIEvent;
+    public TextMeshProUGUI PickText;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class BatteryPickUp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && CanPickUp == true)
         {
+            PickText.enabled = false;
             PickUp();
         }
     }
@@ -24,6 +26,8 @@ public class BatteryPickUp : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            PickText.enabled = true;
+            PickText.text = "Pick Up: E";
             CanPickUp = true;
         }
     }
@@ -32,6 +36,7 @@ public class BatteryPickUp : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            PickText.enabled = false;
             CanPickUp = false;
         }
     }

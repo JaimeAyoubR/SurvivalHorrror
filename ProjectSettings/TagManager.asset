@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - TP
+  - VictoryMenu
+  - DeathMenu
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

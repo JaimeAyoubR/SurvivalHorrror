@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         CheckComponents();
     }
 
@@ -46,15 +47,11 @@ public class GameManager : MonoBehaviour
     {
         updateSunsUI?.Invoke(numOfSunes);
         numOfSunes = 0;
-        AudioManager.PlayBGM(SoundType.AMBIENTE,0.5f);
+        AudioManager.PlayBGM(SoundType.AMBIENTE, 0.5f);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            numOfSunes = 3;
-        }
         CheckPlayerMoving();
         if (numOfSunes >= 3)
         {
@@ -71,7 +68,7 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(PlayerWalkSound());
             }
         }
-        else 
+        else
         {
             //AudioManager.StopSFX();
             //audioManager.StopSFX(audioManager.PlayerStepsource);
@@ -81,7 +78,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-
     private IEnumerator PlayerWalkSound()
     {
         isPlayerSound = true;
@@ -89,7 +85,6 @@ public class GameManager : MonoBehaviour
         AudioManager.PlaySFXRandom(SoundType.PASOS, 0.40f, 0.55f);
         isPlayerSound = false;
     }
-
 
 
     void CheckComponents()
